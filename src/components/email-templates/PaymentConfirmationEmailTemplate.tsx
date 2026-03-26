@@ -60,8 +60,8 @@ export function PaymentConfirmationEmailTemplate({
     }}>
       {/* Header */}
       <div style={{
-        backgroundColor: 'linear-gradient(135deg, #EAB308 0%, #fbbf24 50%, #22d3ee 100%)',
-        background: 'linear-gradient(135deg, #EAB308 0%, #fbbf24 50%, #22d3ee 100%)',
+        backgroundColor: 'linear-gradient(135deg, #000000 0%, #6d0c0f 45%, #e50914 100%)',
+        background: 'linear-gradient(135deg, #000000 0%, #6d0c0f 45%, #e50914 100%)',
         padding: '40px 20px',
         textAlign: 'center',
         borderRadius: '12px 12px 0 0'
@@ -130,8 +130,8 @@ export function PaymentConfirmationEmailTemplate({
 
         {/* Subscription Summary */}
         <div style={{
-          backgroundColor: '#fefce8',
-          border: '2px solid #EAB308',
+          backgroundColor: '#f5f5f5',
+          border: '2px solid #e50914',
           borderRadius: '12px',
           padding: '24px',
           margin: '32px 0'
@@ -140,7 +140,7 @@ export function PaymentConfirmationEmailTemplate({
             margin: '0 0 20px 0',
             fontSize: '18px',
             fontWeight: '600',
-            color: '#a16207'
+            color: '#404040'
           }}>
             📦 Your Subscription Details
           </h3>
@@ -154,10 +154,10 @@ export function PaymentConfirmationEmailTemplate({
               justifyContent: 'space-between',
               alignItems: 'center',
               paddingBottom: '8px',
-              borderBottom: '1px solid #a7f3d0'
+              borderBottom: '1px solid #e5e5e5'
             }}>
-              <span style={{ fontSize: '14px', color: '#047857' }}>Plan:</span>
-              <span style={{ fontSize: '14px', fontWeight: '600', color: '#047857' }}>{planName}</span>
+              <span style={{ fontSize: '14px', color: '#525252' }}>Plan:</span>
+              <span style={{ fontSize: '14px', fontWeight: '600', color: '#1f2937' }}>{planName}</span>
             </div>
             
             <div style={{
@@ -165,10 +165,10 @@ export function PaymentConfirmationEmailTemplate({
               justifyContent: 'space-between',
               alignItems: 'center',
               paddingBottom: '8px',
-              borderBottom: '1px solid #a7f3d0'
+              borderBottom: '1px solid #e5e5e5'
             }}>
-              <span style={{ fontSize: '14px', color: '#047857' }}>Tokens:</span>
-              <span style={{ fontSize: '14px', fontWeight: '600', color: '#047857' }}>
+              <span style={{ fontSize: '14px', color: '#525252' }}>Tokens:</span>
+              <span style={{ fontSize: '14px', fontWeight: '600', color: '#1f2937' }}>
                 {formatTokens(totalTokens)}/month
                 {additionalTokens > 0 && (
                   <span style={{ fontSize: '12px', color: '#6b7280', marginLeft: '4px' }}>
@@ -183,10 +183,10 @@ export function PaymentConfirmationEmailTemplate({
               justifyContent: 'space-between',
               alignItems: 'center',
               paddingBottom: '8px',
-              borderBottom: '1px solid #a7f3d0'
+              borderBottom: '1px solid #e5e5e5'
             }}>
-              <span style={{ fontSize: '14px', color: '#047857' }}>Billing:</span>
-              <span style={{ fontSize: '14px', fontWeight: '600', color: '#047857' }}>
+              <span style={{ fontSize: '14px', color: '#525252' }}>Billing:</span>
+              <span style={{ fontSize: '14px', fontWeight: '600', color: '#1f2937' }}>
                 {formatPrice(planPrice)}/{billingPeriod === 'monthly' ? 'month' : 'year'}
               </span>
             </div>
@@ -196,8 +196,8 @@ export function PaymentConfirmationEmailTemplate({
               justifyContent: 'space-between',
               alignItems: 'center'
             }}>
-              <span style={{ fontSize: '14px', color: '#047857' }}>Next billing:</span>
-              <span style={{ fontSize: '14px', fontWeight: '600', color: '#047857' }}>
+              <span style={{ fontSize: '14px', color: '#525252' }}>Next billing:</span>
+              <span style={{ fontSize: '14px', fontWeight: '600', color: '#1f2937' }}>
                 {formatDate(nextBillingDate)}
               </span>
             </div>
@@ -239,8 +239,8 @@ export function PaymentConfirmationEmailTemplate({
 
         {/* What's Next */}
         <div style={{
-          backgroundColor: '#fefce8',
-          border: '1px solid #facc15',
+          backgroundColor: '#f5f5f5',
+          border: '1px solid #e50914',
           borderRadius: '8px',
           padding: '20px',
           margin: '24px 0'
@@ -249,7 +249,7 @@ export function PaymentConfirmationEmailTemplate({
             margin: '0 0 12px 0',
             fontSize: '16px',
             fontWeight: '600',
-            color: '#a16207'
+            color: '#404040'
           }}>
             ✨ What's Next?
           </h4>
@@ -258,7 +258,7 @@ export function PaymentConfirmationEmailTemplate({
             margin: '0',
             paddingLeft: '20px',
             fontSize: '14px',
-            color: '#a16207',
+            color: '#525252',
             lineHeight: '1.6'
           }}>
             <li>Your tokens are now active and ready to use</li>
@@ -274,7 +274,7 @@ export function PaymentConfirmationEmailTemplate({
         }}>
           <a href="https://n8nbazar.com/dashboard" style={{
             display: 'inline-block',
-            backgroundColor: '#EAB308',
+            backgroundColor: '#e50914',
             color: '#ffffff',
             textDecoration: 'none',
             padding: '14px 28px',
@@ -289,13 +289,13 @@ export function PaymentConfirmationEmailTemplate({
           <a href="https://n8nbazar.com/templates" style={{
             display: 'inline-block',
             backgroundColor: 'transparent',
-            color: '#EAB308',
+            color: '#e50914',
             textDecoration: 'none',
             padding: '14px 28px',
             borderRadius: '8px',
             fontSize: '16px',
             fontWeight: '600',
-            border: '2px solid #EAB308'
+            border: '2px solid #e50914'
           }}>
             Browse Templates
           </a>
@@ -307,7 +307,7 @@ export function PaymentConfirmationEmailTemplate({
           color: '#6b7280',
           textAlign: 'center'
         }}>
-          Need help getting started? Check out our <a href="#" style={{ color: '#EAB308' }}>documentation</a> or <a href="#" style={{ color: '#EAB308' }}>contact support</a>.
+          Need help getting started? Check out our <a href="#" style={{ color: '#e50914' }}>documentation</a> or <a href="#" style={{ color: '#e50914' }}>contact support</a>.
         </p>
       </div>
 
@@ -335,8 +335,8 @@ export function PaymentConfirmationEmailTemplate({
             Questions about your subscription? We're here to help!
           </p>
           <p style={{ margin: '0 0 16px 0' }}>
-            <a href="mailto:billing@n8nbazar.com" style={{ color: '#EAB308', textDecoration: 'none' }}>billing@n8nbazar.com</a> | 
-            <a href="mailto:support@n8nbazar.com" style={{ color: '#EAB308', textDecoration: 'none', marginLeft: '8px' }}>support@n8nbazar.com</a>
+            <a href="mailto:billing@n8nbazar.com" style={{ color: '#e50914', textDecoration: 'none' }}>billing@n8nbazar.com</a> | 
+            <a href="mailto:support@n8nbazar.com" style={{ color: '#e50914', textDecoration: 'none', marginLeft: '8px' }}>support@n8nbazar.com</a>
           </p>
           <p style={{ margin: '0 0 8px 0' }}>
             N8N Bazar - Magical Automation Platform
@@ -345,9 +345,9 @@ export function PaymentConfirmationEmailTemplate({
             © 2024 N8N Bazar. All rights reserved.
           </p>
           <p style={{ margin: '0' }}>
-            <a href="#" style={{ color: '#EAB308', textDecoration: 'none' }}>Manage Subscription</a> | 
-            <a href="#" style={{ color: '#EAB308', textDecoration: 'none', marginLeft: '8px' }}>Privacy Policy</a> | 
-            <a href="#" style={{ color: '#EAB308', textDecoration: 'none', marginLeft: '8px' }}>Terms</a>
+            <a href="#" style={{ color: '#e50914', textDecoration: 'none' }}>Manage Subscription</a> | 
+            <a href="#" style={{ color: '#e50914', textDecoration: 'none', marginLeft: '8px' }}>Privacy Policy</a> | 
+            <a href="#" style={{ color: '#e50914', textDecoration: 'none', marginLeft: '8px' }}>Terms</a>
           </p>
         </div>
       </div>
@@ -416,7 +416,7 @@ export function generatePaymentConfirmationEmailHTML(props: PaymentConfirmationE
 <body style="margin: 0; padding: 20px; background-color: #f3f4f6;">
   <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #374151; max-width: 600px; margin: 0 auto; background-color: #ffffff">
     <!-- Header -->
-    <div style="background: linear-gradient(135deg, #EAB308 0%, #fbbf24 50%, #22d3ee 100%); padding: 40px 20px; text-align: center; border-radius: 12px 12px 0 0">
+    <div style="background: linear-gradient(135deg, #000000 0%, #6d0c0f 45%, #e50914 100%); padding: 40px 20px; text-align: center; border-radius: 12px 12px 0 0">
       <!-- Logo -->
       <div style="display: inline-block; width: 48px; height: 48px; background-color: rgba(255, 255, 255, 0.2); border-radius: 12px; margin-bottom: 16px; position: relative">
         <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px">✨</div>
@@ -431,26 +431,26 @@ export function generatePaymentConfirmationEmailHTML(props: PaymentConfirmationE
       <p style="margin: 0 0 32px 0; font-size: 16px; color: #4b5563; line-height: 1.6">Your payment has been successfully processed and your N8N Bazar subscription is now active. You're all set to create magical workflows!</p>
 
       <!-- Subscription Summary -->
-      <div style="background-color: #fefce8; border: 2px solid #EAB308; border-radius: 12px; padding: 24px; margin: 32px 0">
-        <h3 style="margin: 0 0 20px 0; font-size: 18px; font-weight: 600; color: #a16207">📦 Your Subscription Details</h3>
+      <div style="background-color: #f5f5f5; border: 2px solid #e50914; border-radius: 12px; padding: 24px; margin: 32px 0">
+        <h3 style="margin: 0 0 20px 0; font-size: 18px; font-weight: 600; color: #404040">📦 Your Subscription Details</h3>
         <div style="display: grid; gap: 12px">
-          <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; border-bottom: 1px solid #a7f3d0">
-            <span style="font-size: 14px; color: #047857">Plan:</span>
-            <span style="font-size: 14px; font-weight: 600; color: #047857">${planName}</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; border-bottom: 1px solid #e5e5e5">
+            <span style="font-size: 14px; color: #525252">Plan:</span>
+            <span style="font-size: 14px; font-weight: 600; color: #1f2937">${planName}</span>
           </div>
-          <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; border-bottom: 1px solid #a7f3d0">
-            <span style="font-size: 14px; color: #047857">Tokens:</span>
-            <span style="font-size: 14px; font-weight: 600; color: #047857">
+          <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; border-bottom: 1px solid #e5e5e5">
+            <span style="font-size: 14px; color: #525252">Tokens:</span>
+            <span style="font-size: 14px; font-weight: 600; color: #1f2937">
               ${formatTokens(totalTokens)}/month${additionalTokens > 0 ? ` (includes ${formatTokens(additionalTokens)} extra)` : ''}
             </span>
           </div>
-          <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; border-bottom: 1px solid #a7f3d0">
-            <span style="font-size: 14px; color: #047857">Billing:</span>
-            <span style="font-size: 14px; font-weight: 600; color: #047857">${formatPrice(planPrice)}/${billingPeriod === 'monthly' ? 'month' : 'year'}</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; border-bottom: 1px solid #e5e5e5">
+            <span style="font-size: 14px; color: #525252">Billing:</span>
+            <span style="font-size: 14px; font-weight: 600; color: #1f2937">${formatPrice(planPrice)}/${billingPeriod === 'monthly' ? 'month' : 'year'}</span>
           </div>
           <div style="display: flex; justify-content: space-between; align-items: center">
-            <span style="font-size: 14px; color: #047857">Next billing:</span>
-            <span style="font-size: 14px; font-weight: 600; color: #047857">${formatDate(nextBillingDate)}</span>
+            <span style="font-size: 14px; color: #525252">Next billing:</span>
+            <span style="font-size: 14px; font-weight: 600; color: #1f2937">${formatDate(nextBillingDate)}</span>
           </div>
         </div>
       </div>
@@ -467,9 +467,9 @@ export function generatePaymentConfirmationEmailHTML(props: PaymentConfirmationE
       </div>
 
       <!-- What's Next -->
-      <div style="background-color: #fefce8; border: 1px solid #facc15; border-radius: 8px; padding: 20px; margin: 24px 0">
-        <h4 style="margin: 0 0 12px 0; font-size: 16px; font-weight: 600; color: #a16207">✨ What's Next?</h4>
-        <ul style="margin: 0; padding-left: 20px; font-size: 14px; color: #a16207; line-height: 1.6">
+      <div style="background-color: #f5f5f5; border: 1px solid #e50914; border-radius: 8px; padding: 20px; margin: 24px 0">
+        <h4 style="margin: 0 0 12px 0; font-size: 16px; font-weight: 600; color: #404040">✨ What's Next?</h4>
+        <ul style="margin: 0; padding-left: 20px; font-size: 14px; color: #525252; line-height: 1.6">
           <li>Your tokens are now active and ready to use</li>
           <li>Start generating magical workflows with AI</li>
           <li>Access our premium template library</li>
@@ -478,12 +478,12 @@ export function generatePaymentConfirmationEmailHTML(props: PaymentConfirmationE
       </div>
 
       <div style="text-align: center; margin: 40px 0">
-        <a href="https://n8nbazar.com/dashboard" style="display: inline-block; background-color: #EAB308; color: #ffffff; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-size: 16px; font-weight: 600; margin-right: 12px">Go to Dashboard ✨</a>
-        <a href="https://n8nbazar.com/templates" style="display: inline-block; background-color: transparent; color: #EAB308; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-size: 16px; font-weight: 600; border: 2px solid #EAB308">Browse Templates</a>
+        <a href="https://n8nbazar.com/dashboard" style="display: inline-block; background-color: #e50914; color: #ffffff; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-size: 16px; font-weight: 600; margin-right: 12px">Go to Dashboard ✨</a>
+        <a href="https://n8nbazar.com/templates" style="display: inline-block; background-color: transparent; color: #e50914; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-size: 16px; font-weight: 600; border: 2px solid #e50914">Browse Templates</a>
       </div>
 
       <p style="margin: 32px 0 0 0; font-size: 14px; color: #6b7280; text-align: center">
-        Need help getting started? Check out our <a href="#" style="color: #EAB308">documentation</a> or <a href="#" style="color: #EAB308">contact support</a>.
+        Need help getting started? Check out our <a href="#" style="color: #e50914">documentation</a> or <a href="#" style="color: #e50914">contact support</a>.
       </p>
     </div>
 
@@ -493,15 +493,15 @@ export function generatePaymentConfirmationEmailHTML(props: PaymentConfirmationE
       <div style="font-size: 12px; color: #9ca3af; line-height: 1.5">
         <p style="margin: 0 0 8px 0">Questions about your subscription? We're here to help!</p>
         <p style="margin: 0 0 16px 0">
-          <a href="mailto:billing@n8nbazar.com" style="color: #EAB308; text-decoration: none">billing@n8nbazar.com</a> | 
-          <a href="mailto:support@n8nbazar.com" style="color: #EAB308; text-decoration: none; margin-left: 8px">support@n8nbazar.com</a>
+          <a href="mailto:billing@n8nbazar.com" style="color: #e50914; text-decoration: none">billing@n8nbazar.com</a> | 
+          <a href="mailto:support@n8nbazar.com" style="color: #e50914; text-decoration: none; margin-left: 8px">support@n8nbazar.com</a>
         </p>
         <p style="margin: 0 0 8px 0">N8N Bazar - Magical Automation Platform</p>
         <p style="margin: 0 0 8px 0">© 2024 N8N Bazar. All rights reserved.</p>
         <p style="margin: 0">
-          <a href="#" style="color: #EAB308; text-decoration: none">Manage Subscription</a> | 
-          <a href="#" style="color: #EAB308; text-decoration: none; margin-left: 8px">Privacy Policy</a> | 
-          <a href="#" style="color: #EAB308; text-decoration: none; margin-left: 8px">Terms</a>
+          <a href="#" style="color: #e50914; text-decoration: none">Manage Subscription</a> | 
+          <a href="#" style="color: #e50914; text-decoration: none; margin-left: 8px">Privacy Policy</a> | 
+          <a href="#" style="color: #e50914; text-decoration: none; margin-left: 8px">Terms</a>
         </p>
       </div>
     </div>

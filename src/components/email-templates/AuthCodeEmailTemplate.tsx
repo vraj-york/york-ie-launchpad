@@ -22,8 +22,8 @@ export function AuthCodeEmailTemplate({
     }}>
       {/* Header */}
       <div style={{
-        backgroundColor: 'linear-gradient(135deg, #EAB308 0%, #fbbf24 50%, #22d3ee 100%)',
-        background: 'linear-gradient(135deg, #EAB308 0%, #fbbf24 50%, #22d3ee 100%)',
+        backgroundColor: 'linear-gradient(135deg, #000000 0%, #6d0c0f 45%, #e50914 100%)',
+        background: 'linear-gradient(135deg, #000000 0%, #6d0c0f 45%, #e50914 100%)',
         padding: '40px 20px',
         textAlign: 'center',
         borderRadius: '12px 12px 0 0'
@@ -92,8 +92,8 @@ export function AuthCodeEmailTemplate({
 
         {/* Auth Code Box */}
         <div style={{
-          backgroundColor: '#fefce8',
-          border: '2px solid #EAB308',
+          backgroundColor: '#f5f5f5',
+          border: '2px solid #e50914',
           borderRadius: '12px',
           padding: '32px',
           textAlign: 'center',
@@ -103,7 +103,7 @@ export function AuthCodeEmailTemplate({
             margin: '0 0 16px 0',
             fontSize: '14px',
             fontWeight: '500',
-            color: '#a16207',
+            color: '#525252',
             textTransform: 'uppercase',
             letterSpacing: '0.5px'
           }}>
@@ -113,7 +113,7 @@ export function AuthCodeEmailTemplate({
           <div style={{
             fontSize: '36px',
             fontWeight: '700',
-            color: '#EAB308',
+            color: '#e50914',
             letterSpacing: '8px',
             fontFamily: 'Monaco, Consolas, "Courier New", monospace',
             margin: '0 0 16px 0'
@@ -131,8 +131,8 @@ export function AuthCodeEmailTemplate({
         </div>
 
         <div style={{
-          backgroundColor: '#fef3c7',
-          border: '1px solid #f59e0b',
+          backgroundColor: '#fef2f2',
+          border: '1px solid #fecaca',
           borderRadius: '8px',
           padding: '16px',
           margin: '24px 0'
@@ -141,14 +141,14 @@ export function AuthCodeEmailTemplate({
             margin: '0 0 8px 0',
             fontSize: '14px',
             fontWeight: '600',
-            color: '#92400e'
+            color: '#991b1b'
           }}>
             🔒 Security Notice
           </p>
           <p style={{
             margin: '0',
             fontSize: '14px',
-            color: '#92400e',
+            color: '#991b1b',
             lineHeight: '1.5'
           }}>
             If you didn't request this code, please ignore this email. Never share your verification code with anyone.
@@ -169,7 +169,7 @@ export function AuthCodeEmailTemplate({
         }}>
           <a href="https://n8nbazar.com/login" style={{
             display: 'inline-block',
-            backgroundColor: '#EAB308',
+            backgroundColor: '#e50914',
             color: '#ffffff',
             textDecoration: 'none',
             padding: '12px 24px',
@@ -209,9 +209,9 @@ export function AuthCodeEmailTemplate({
             © 2024 N8N Bazar. All rights reserved.
           </p>
           <p style={{ margin: '0' }}>
-            <a href="#" style={{ color: '#EAB308', textDecoration: 'none' }}>Unsubscribe</a> | 
-            <a href="#" style={{ color: '#EAB308', textDecoration: 'none', marginLeft: '8px' }}>Privacy Policy</a> | 
-            <a href="#" style={{ color: '#EAB308', textDecoration: 'none', marginLeft: '8px' }}>Support</a>
+            <a href="#" style={{ color: '#e50914', textDecoration: 'none' }}>Unsubscribe</a> | 
+            <a href="#" style={{ color: '#e50914', textDecoration: 'none', marginLeft: '8px' }}>Privacy Policy</a> | 
+            <a href="#" style={{ color: '#e50914', textDecoration: 'none', marginLeft: '8px' }}>Support</a>
           </p>
         </div>
       </div>
@@ -243,7 +243,7 @@ export function generateAuthCodeEmailHTML(props: AuthCodeEmailProps): string {
 <body style="margin: 0; padding: 20px; background-color: #f3f4f6;">
   <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #374151; max-width: 600px; margin: 0 auto; background-color: #ffffff">
     <!-- Header -->
-    <div style="background: linear-gradient(135deg, #EAB308 0%, #fbbf24 50%, #22d3ee 100%); padding: 40px 20px; text-align: center; border-radius: 12px 12px 0 0">
+    <div style="background: linear-gradient(135deg, #000000 0%, #6d0c0f 45%, #e50914 100%); padding: 40px 20px; text-align: center; border-radius: 12px 12px 0 0">
       <!-- Logo -->
       <div style="display: inline-block; width: 48px; height: 48px; background-color: rgba(255, 255, 255, 0.2); border-radius: 12px; margin-bottom: 16px; position: relative">
         <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px">✨</div>
@@ -258,9 +258,9 @@ export function generateAuthCodeEmailHTML(props: AuthCodeEmailProps): string {
       <p style="margin: 0 0 24px 0; font-size: 16px; color: #4b5563; line-height: 1.6">We received a request to sign in to your N8N Bazar account. Use the verification code below to complete your magical journey:</p>
 
       <!-- Auth Code Box -->
-      <div style="background-color: #fefce8; border: 2px solid #EAB308; border-radius: 12px; padding: 32px; text-align: center; margin: 32px 0">
-        <p style="margin: 0 0 16px 0; font-size: 14px; font-weight: 500; color: #a16207; text-transform: uppercase; letter-spacing: 0.5px">Your Verification Code</p>
-        <div style="font-size: 36px; font-weight: 700; color: #EAB308; letter-spacing: 8px; font-family: Monaco, Consolas, 'Courier New', monospace; margin: 0 0 16px 0">${authCode}</div>
+      <div style="background-color: #f5f5f5; border: 2px solid #e50914; border-radius: 12px; padding: 32px; text-align: center; margin: 32px 0">
+        <p style="margin: 0 0 16px 0; font-size: 14px; font-weight: 500; color: #525252; text-transform: uppercase; letter-spacing: 0.5px">Your Verification Code</p>
+        <div style="font-size: 36px; font-weight: 700; color: #e50914; letter-spacing: 8px; font-family: Monaco, Consolas, 'Courier New', monospace; margin: 0 0 16px 0">${authCode}</div>
         <p style="margin: 0; font-size: 14px; color: #6b7280">This code expires in <strong>${expiresInMinutes} minutes</strong></p>
       </div>
 
@@ -272,7 +272,7 @@ export function generateAuthCodeEmailHTML(props: AuthCodeEmailProps): string {
       <p style="margin: 32px 0 0 0; font-size: 16px; color: #4b5563">Ready to create some magical workflows? We can't wait to see what you'll automate next!</p>
 
       <div style="text-align: center; margin: 40px 0">
-        <a href="https://n8nbazar.com/login" style="display: inline-block; background-color: #EAB308; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; font-weight: 600">Continue to N8N Bazar →</a>
+        <a href="https://n8nbazar.com/login" style="display: inline-block; background-color: #e50914; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; font-weight: 600">Continue to N8N Bazar →</a>
       </div>
     </div>
 
@@ -283,9 +283,9 @@ export function generateAuthCodeEmailHTML(props: AuthCodeEmailProps): string {
         <p style="margin: 0 0 8px 0">N8N Bazar - Magical Automation Platform</p>
         <p style="margin: 0 0 8px 0">© 2024 N8N Bazar. All rights reserved.</p>
         <p style="margin: 0">
-          <a href="#" style="color: #EAB308; text-decoration: none">Unsubscribe</a> | 
-          <a href="#" style="color: #EAB308; text-decoration: none; margin-left: 8px">Privacy Policy</a> | 
-          <a href="#" style="color: #EAB308; text-decoration: none; margin-left: 8px">Support</a>
+          <a href="#" style="color: #e50914; text-decoration: none">Unsubscribe</a> | 
+          <a href="#" style="color: #e50914; text-decoration: none; margin-left: 8px">Privacy Policy</a> | 
+          <a href="#" style="color: #e50914; text-decoration: none; margin-left: 8px">Support</a>
         </p>
       </div>
     </div>
