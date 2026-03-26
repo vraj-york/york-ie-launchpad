@@ -323,7 +323,7 @@ export function LogoDesigner() {
             <div className="flex gap-3 mb-4">
               <div className="flex flex-col items-center">
                 <div className="w-12 h-12 rounded-lg bg-primary mb-2"></div>
-                <span className="text-xs text-muted-foreground">#00D4AA</span>
+                <span className="text-xs text-muted-foreground">#EAB308</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-12 h-12 rounded-lg bg-cyan-400 mb-2"></div>
