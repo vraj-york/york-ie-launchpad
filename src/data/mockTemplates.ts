@@ -32,7 +32,7 @@ export const mockTemplates: WorkflowTemplate[] = [
     tools: [
       { name: 'Slack', icon: '💬', color: '#4A154B' },
       { name: 'Gmail', icon: '📧', color: '#EA4335' },
-      { name: 'Filter', icon: '🔍', color: '#EAB308' },
+      { name: 'Filter', icon: '🔍', color: '#E50914' },
       { name: 'Webhook', icon: '🔗', color: '#FFA500' }
     ],
     nodes: 4,
