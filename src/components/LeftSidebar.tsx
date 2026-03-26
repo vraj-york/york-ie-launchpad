@@ -160,7 +160,7 @@ export function LeftSidebar({
                   variant={item.active ? "default" : "ghost"}
                   className={`w-full justify-start gap-3 ${
                     isCollapsed ? 'px-2' : 'px-3'
-                  } ${item.active ? 'bg-primary text-primary-foreground' : 'text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground'}`}
+                  } ${item.active ? 'bg-primary text-primary-foreground' : 'text-sidebar-foreground hover:!bg-sidebar-accent hover:!text-sidebar-accent-foreground'}`}
                   onClick={() => onSectionChange(item.id)}
                   data-tour={item.tourId}
                 >
@@ -186,12 +186,12 @@ export function LeftSidebar({
                   variant={item.active ? "default" : "ghost"}
                   className={`w-full justify-start gap-3 ${
                     isCollapsed ? 'px-2' : 'px-3'
-                  } ${
+                  }                   ${
                     item.highlight 
                       ? 'bg-primary text-primary-foreground hover:bg-primary/90' 
                       : item.active 
                         ? 'bg-primary text-primary-foreground' 
-                        : 'text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground'
+                        : 'text-sidebar-foreground hover:!bg-sidebar-accent hover:!text-sidebar-accent-foreground'
                   }`}
                   onClick={() => onSectionChange(item.id)}
                   data-tour={item.tourId}
