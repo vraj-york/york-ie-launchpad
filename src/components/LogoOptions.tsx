@@ -571,10 +571,10 @@ export function LogoOptions() {
               </h4>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded bg-[#00D4AA]"></div>
+                  <div className="w-6 h-6 rounded bg-[#2563EB]"></div>
                   <div>
                     <p className="text-sm font-medium">Primary</p>
-                    <p className="text-xs text-muted-foreground">#00D4AA</p>
+                    <p className="text-xs text-muted-foreground">#2563EB</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">

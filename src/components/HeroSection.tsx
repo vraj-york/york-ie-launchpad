@@ -40,7 +40,7 @@ export function HeroSection({ onSearch, hasSearched }: HeroSectionProps) {
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-16 bg-gradient-to-br from-background via-primary/5 to-cyan-400/10">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(0,212,170,0.05)_25%,rgba(0,212,170,0.05)_50%,transparent_50%,transparent_75%,rgba(0,212,170,0.05)_75%)] bg-[length:60px_60px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(37,99,235,0.05)_25%,rgba(37,99,235,0.05)_50%,transparent_50%,transparent_75%,rgba(37,99,235,0.05)_75%)] bg-[length:60px_60px]" />
       </div>
 
       <div className="relative z-10 w-full max-w-6xl mx-auto text-center">

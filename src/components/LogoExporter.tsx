@@ -147,7 +147,7 @@ export function LogoExporter() {
           >
             <defs>
               <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#00D4AA" />
+                <stop offset="0%" stopColor="#2563EB" />
                 <stop offset="100%" stopColor="#22d3ee" />
               </linearGradient>
             </defs>
@@ -178,7 +178,7 @@ export function LogoExporter() {
               width="80" 
               height="80" 
               className="text-primary"
-              style={{ color: '#00D4AA' }}
+              style={{ color: '#2563EB' }}
             />
           </svg>
         </LogoVariant>
@@ -198,7 +198,7 @@ export function LogoExporter() {
           >
             <defs>
               <linearGradient id="boxTextGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#00D4AA" />
+                <stop offset="0%" stopColor="#2563EB" />
                 <stop offset="100%" stopColor="#22d3ee" />
               </linearGradient>
             </defs>
@@ -231,7 +231,7 @@ export function LogoExporter() {
               fontFamily="system-ui, -apple-system, sans-serif"
               fontSize="24"
               fontWeight="bold"
-              fill="#00D4AA"
+              fill="#2563EB"
             >
               Bazar
             </text>
@@ -253,7 +253,7 @@ export function LogoExporter() {
           >
             <defs>
               <linearGradient id="completeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#00D4AA" />
+                <stop offset="0%" stopColor="#2563EB" />
                 <stop offset="100%" stopColor="#22d3ee" />
               </linearGradient>
             </defs>
@@ -284,7 +284,7 @@ export function LogoExporter() {
             <g transform="translate(20, 20)">
               <path
                 d="M2 12L7 17L12 12M2 7L7 12L12 7M2 2L7 7L12 2"
-                stroke="#00D4AA"
+                stroke="#2563EB"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -310,7 +310,7 @@ export function LogoExporter() {
               fontFamily="system-ui, -apple-system, sans-serif"
               fontSize="24"
               fontWeight="bold"
-              fill="#00D4AA"
+              fill="#2563EB"
             >
               Bazar
             </text>
@@ -361,8 +361,8 @@ export function LogoExporter() {
               <div>
                 <span className="font-medium">Primary Brand Color:</span>
                 <div className="flex items-center gap-2 mt-1">
-                  <div className="w-4 h-4 rounded" style={{ backgroundColor: '#00D4AA' }}></div>
-                  <code className="text-xs bg-muted px-2 py-1 rounded">#00D4AA</code>
+                  <div className="w-4 h-4 rounded" style={{ backgroundColor: '#2563EB' }}></div>
+                  <code className="text-xs bg-muted px-2 py-1 rounded">#2563EB</code>
                 </div>
               </div>
               <div>

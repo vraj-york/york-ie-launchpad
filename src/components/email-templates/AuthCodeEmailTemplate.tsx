@@ -22,8 +22,8 @@ export function AuthCodeEmailTemplate({
     }}>
       {/* Header */}
       <div style={{
-        backgroundColor: 'linear-gradient(135deg, #00D4AA 0%, #fbbf24 50%, #22d3ee 100%)',
-        background: 'linear-gradient(135deg, #00D4AA 0%, #fbbf24 50%, #22d3ee 100%)',
+        backgroundColor: 'linear-gradient(135deg, #2563EB 0%, #fbbf24 50%, #22d3ee 100%)',
+        background: 'linear-gradient(135deg, #2563EB 0%, #fbbf24 50%, #22d3ee 100%)',
         padding: '40px 20px',
         textAlign: 'center',
         borderRadius: '12px 12px 0 0'
@@ -92,8 +92,8 @@ export function AuthCodeEmailTemplate({
 
         {/* Auth Code Box */}
         <div style={{
-          backgroundColor: '#f0fdfa',
-          border: '2px solid #00D4AA',
+          backgroundColor: '#eff6ff',
+          border: '2px solid #2563EB',
           borderRadius: '12px',
           padding: '32px',
           textAlign: 'center',
@@ -113,7 +113,7 @@ export function AuthCodeEmailTemplate({
           <div style={{
             fontSize: '36px',
             fontWeight: '700',
-            color: '#00D4AA',
+            color: '#2563EB',
             letterSpacing: '8px',
             fontFamily: 'Monaco, Consolas, "Courier New", monospace',
             margin: '0 0 16px 0'
@@ -169,7 +169,7 @@ export function AuthCodeEmailTemplate({
         }}>
           <a href="https://n8nbazar.com/login" style={{
             display: 'inline-block',
-            backgroundColor: '#00D4AA',
+            backgroundColor: '#2563EB',
             color: '#ffffff',
             textDecoration: 'none',
             padding: '12px 24px',
@@ -209,9 +209,9 @@ export function AuthCodeEmailTemplate({
             © 2024 N8N Bazar. All rights reserved.
           </p>
           <p style={{ margin: '0' }}>
-            <a href="#" style={{ color: '#00D4AA', textDecoration: 'none' }}>Unsubscribe</a> | 
-            <a href="#" style={{ color: '#00D4AA', textDecoration: 'none', marginLeft: '8px' }}>Privacy Policy</a> | 
-            <a href="#" style={{ color: '#00D4AA', textDecoration: 'none', marginLeft: '8px' }}>Support</a>
+            <a href="#" style={{ color: '#2563EB', textDecoration: 'none' }}>Unsubscribe</a> | 
+            <a href="#" style={{ color: '#2563EB', textDecoration: 'none', marginLeft: '8px' }}>Privacy Policy</a> | 
+            <a href="#" style={{ color: '#2563EB', textDecoration: 'none', marginLeft: '8px' }}>Support</a>
           </p>
         </div>
       </div>
@@ -243,7 +243,7 @@ export function generateAuthCodeEmailHTML(props: AuthCodeEmailProps): string {
 <body style="margin: 0; padding: 20px; background-color: #f3f4f6;">
   <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #374151; max-width: 600px; margin: 0 auto; background-color: #ffffff">
     <!-- Header -->
-    <div style="background: linear-gradient(135deg, #00D4AA 0%, #fbbf24 50%, #22d3ee 100%); padding: 40px 20px; text-align: center; border-radius: 12px 12px 0 0">
+    <div style="background: linear-gradient(135deg, #2563EB 0%, #fbbf24 50%, #22d3ee 100%); padding: 40px 20px; text-align: center; border-radius: 12px 12px 0 0">
       <!-- Logo -->
       <div style="display: inline-block; width: 48px; height: 48px; background-color: rgba(255, 255, 255, 0.2); border-radius: 12px; margin-bottom: 16px; position: relative">
         <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px">✨</div>
@@ -258,9 +258,9 @@ export function generateAuthCodeEmailHTML(props: AuthCodeEmailProps): string {
       <p style="margin: 0 0 24px 0; font-size: 16px; color: #4b5563; line-height: 1.6">We received a request to sign in to your N8N Bazar account. Use the verification code below to complete your magical journey:</p>
 
       <!-- Auth Code Box -->
-      <div style="background-color: #f0fdfa; border: 2px solid #00D4AA; border-radius: 12px; padding: 32px; text-align: center; margin: 32px 0">
+      <div style="background-color: #eff6ff; border: 2px solid #2563EB; border-radius: 12px; padding: 32px; text-align: center; margin: 32px 0">
         <p style="margin: 0 0 16px 0; font-size: 14px; font-weight: 500; color: #059669; text-transform: uppercase; letter-spacing: 0.5px">Your Verification Code</p>
-        <div style="font-size: 36px; font-weight: 700; color: #00D4AA; letter-spacing: 8px; font-family: Monaco, Consolas, 'Courier New', monospace; margin: 0 0 16px 0">${authCode}</div>
+        <div style="font-size: 36px; font-weight: 700; color: #2563EB; letter-spacing: 8px; font-family: Monaco, Consolas, 'Courier New', monospace; margin: 0 0 16px 0">${authCode}</div>
         <p style="margin: 0; font-size: 14px; color: #6b7280">This code expires in <strong>${expiresInMinutes} minutes</strong></p>
       </div>
 
@@ -272,7 +272,7 @@ export function generateAuthCodeEmailHTML(props: AuthCodeEmailProps): string {
       <p style="margin: 32px 0 0 0; font-size: 16px; color: #4b5563">Ready to create some magical workflows? We can't wait to see what you'll automate next!</p>
 
       <div style="text-align: center; margin: 40px 0">
-        <a href="https://n8nbazar.com/login" style="display: inline-block; background-color: #00D4AA; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; font-weight: 600">Continue to N8N Bazar →</a>
+        <a href="https://n8nbazar.com/login" style="display: inline-block; background-color: #2563EB; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; font-weight: 600">Continue to N8N Bazar →</a>
       </div>
     </div>
 
@@ -283,9 +283,9 @@ export function generateAuthCodeEmailHTML(props: AuthCodeEmailProps): string {
         <p style="margin: 0 0 8px 0">N8N Bazar - Magical Automation Platform</p>
         <p style="margin: 0 0 8px 0">© 2024 N8N Bazar. All rights reserved.</p>
         <p style="margin: 0">
-          <a href="#" style="color: #00D4AA; text-decoration: none">Unsubscribe</a> | 
-          <a href="#" style="color: #00D4AA; text-decoration: none; margin-left: 8px">Privacy Policy</a> | 
-          <a href="#" style="color: #00D4AA; text-decoration: none; margin-left: 8px">Support</a>
+          <a href="#" style="color: #2563EB; text-decoration: none">Unsubscribe</a> | 
+          <a href="#" style="color: #2563EB; text-decoration: none; margin-left: 8px">Privacy Policy</a> | 
+          <a href="#" style="color: #2563EB; text-decoration: none; margin-left: 8px">Support</a>
         </p>
       </div>
     </div>

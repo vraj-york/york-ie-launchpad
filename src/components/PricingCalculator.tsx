@@ -59,7 +59,7 @@ const infrastructures: InfrastructurePricing[] = [
   {
     name: "N8N Cloud",
     logo: "⚡",
-    color: "rgb(0, 212, 170)",
+    color: "rgb(37, 99, 235)",
     monthlyBase: 20,
     executionCost: 0.002, // $2 per 1000 executions
     storageCost: 0.5, // $0.50 per GB

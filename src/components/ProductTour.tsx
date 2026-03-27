@@ -239,7 +239,7 @@ export function ProductTour({
               top: highlightRect.top - 8,
               width: highlightRect.width + 16,
               height: highlightRect.height + 16,
-              boxShadow: `0 0 0 9999px rgba(0, 0, 0, 0.6), 0 4px 20px rgba(0, 212, 170, 0.3)`,
+              boxShadow: `0 0 0 9999px rgba(0, 0, 0, 0.6), 0 4px 20px rgba(37, 99, 235, 0.3)`,
               pointerEvents: 'none',
               zIndex: 51
             }}
