@@ -26,9 +26,9 @@ const Logo1: React.FC<{ className?: string; isDark?: boolean }> = ({ className =
     </div>
     <div className="flex flex-col">
       <span className="text-2xl font-bold bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">
-        N8N
+        Auto
       </span>
-      <span className="text-sm text-muted-foreground -mt-1">BAZAR</span>
+      <span className="text-sm text-muted-foreground -mt-1">WORKFLOW</span>
     </div>
   </div>
 );
@@ -47,8 +47,8 @@ const Logo2: React.FC<{ className?: string; isDark?: boolean }> = ({ className =
       </svg>
     </div>
     <span className="text-2xl font-bold">
-      <span className="bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">N8N</span>
-      <span className="text-foreground/80"> Bazar</span>
+      <span className="bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">Auto</span>
+      <span className="text-foreground/80"> Workflow</span>
     </span>
   </div>
 );
@@ -61,7 +61,7 @@ const Logo3: React.FC<{ className?: string; isDark?: boolean }> = ({ className =
       </div>
     </div>
     <span className="text-2xl font-bold tracking-tight">
-      N8N <span className="text-primary">Bazar</span>
+      Auto <span className="text-primary">Workflow</span>
     </span>
   </div>
 );
@@ -75,20 +75,16 @@ const Logo4: React.FC<{ className?: string; isDark?: boolean }> = ({ className =
       <div className="w-6 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500"></div>
       <div className="w-2 h-2 rounded-full bg-blue-500"></div>
     </div>
-    <span className="text-lg font-bold tracking-widest text-foreground">N8N BAZAR</span>
+    <span className="text-lg font-bold tracking-widest text-foreground">AUTO WORKFLOW</span>
   </div>
 );
 
 const Logo5: React.FC<{ className?: string; isDark?: boolean }> = ({ className = "", isDark }) => (
-  <div className={`relative ${className}`}>
-    <div className="text-3xl font-bold">
-      <span className="text-foreground">N</span>
-      <span className="text-primary relative">
-        8
-        <div className="absolute -top-2 -right-1 w-1.5 h-1.5 rounded-full bg-cyan-400"></div>
-      </span>
-      <span className="text-foreground">N</span>
-      <span className="text-sm text-muted-foreground ml-2 font-normal">bazar</span>
+  <div className={className}>
+    <div className="relative text-3xl font-bold inline-flex items-center gap-1">
+      <span className="bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">Auto</span>
+      <span className="text-foreground">Workflow</span>
+      <div className="absolute -top-1 -right-2 w-1.5 h-1.5 rounded-full bg-cyan-400" />
     </div>
   </div>
 );
@@ -98,13 +94,13 @@ const Logo6: React.FC<{ className?: string; isDark?: boolean }> = ({ className =
     <div className="relative w-10 h-10">
       <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-primary to-cyan-400 opacity-20"></div>
       <div className="absolute inset-1 rounded-lg bg-gradient-to-br from-primary to-cyan-400 flex items-center justify-center">
-        <span className="text-white font-bold text-sm">8</span>
+        <span className="text-white font-bold text-sm">A</span>
       </div>
       <div className="absolute -top-1 left-2 w-1 h-1 rounded-full bg-primary"></div>
       <div className="absolute -bottom-1 right-2 w-1 h-1 rounded-full bg-cyan-400"></div>
     </div>
     <div className="flex flex-col">
-      <span className="text-xl font-bold text-foreground">N8N Bazar</span>
+      <span className="text-xl font-bold text-foreground">AutoWorkflow</span>
       <span className="text-xs text-muted-foreground">Automation Marketplace</span>
     </div>
   </div>
@@ -119,9 +115,9 @@ const Logo7: React.FC<{ className?: string; isDark?: boolean }> = ({ className =
       </div>
     </div>
     <span className="text-2xl font-bold">
-      <span className="text-primary">N8N</span>
+      <span className="text-primary">Auto</span>
       <span className="text-muted-foreground mx-1">•</span>
-      <span className="text-foreground">BAZAR</span>
+      <span className="text-foreground">WORKFLOW</span>
     </span>
   </div>
 );
@@ -131,7 +127,7 @@ const Logo8: React.FC<{ className?: string; isDark?: boolean }> = ({ className =
     <div className="flex items-center justify-center gap-1 mb-1">
       <Sparkles className="w-4 h-4 text-primary" />
       <span className="text-2xl font-bold bg-gradient-to-r from-primary via-cyan-400 to-blue-500 bg-clip-text text-transparent">
-        N8N BAZAR
+        AUTO WORKFLOW
       </span>
       <Sparkles className="w-4 h-4 text-cyan-400" />
     </div>
@@ -213,9 +209,9 @@ export function LogoDesigner() {
   return (
     <div className="flex-1 p-6 max-w-7xl mx-auto">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">N8N Bazar Logo Options</h1>
+        <h1 className="text-3xl font-bold mb-2">AutoWorkflow Logo Options</h1>
         <p className="text-muted-foreground">
-          Explore different logo designs for your N8N automation marketplace. Each design uses your cyan/turquoise brand colors and works in both light and dark themes.
+          Explore different logo designs for AutoWorkflow. Each design uses your brand colors and works in both light and dark themes.
         </p>
       </div>
 

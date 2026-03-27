@@ -39,7 +39,7 @@ export function GoogleLoginDialog({ isOpen, onClose, onLogin }: GoogleLoginDialo
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader className="text-center">
-          <DialogTitle className="text-2xl">Welcome to N8N Bazar</DialogTitle>
+          <DialogTitle className="text-2xl">Welcome to AutoWorkflow</DialogTitle>
           <DialogDescription className="text-base">
             Sign in with Google to access thousands of workflow templates and start automating your tasks.
           </DialogDescription>

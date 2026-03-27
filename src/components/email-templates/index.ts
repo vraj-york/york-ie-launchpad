@@ -21,7 +21,7 @@ export const sendAuthCodeEmail = async (emailProps: {
   // This would integrate with your email service (SendGrid, AWS SES, etc.)
   console.log('Sending auth code email:', {
     to: emailProps.userEmail,
-    subject: 'Your N8N Bazar Verification Code ✨',
+    subject: 'Your AutoWorkflow Verification Code ✨',
     html: htmlContent
   });
   
@@ -45,7 +45,7 @@ export const sendPaymentConfirmationEmail = async (emailProps: {
   // This would integrate with your email service (SendGrid, AWS SES, etc.)
   console.log('Sending payment confirmation email:', {
     to: emailProps.userEmail,
-    subject: 'Payment Confirmed - Welcome to N8N Bazar! 🎉',
+    subject: 'Payment Confirmed - Welcome to AutoWorkflow! 🎉',
     html: htmlContent
   });
   

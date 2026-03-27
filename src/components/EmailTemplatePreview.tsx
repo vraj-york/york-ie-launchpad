@@ -64,7 +64,7 @@ export function EmailTemplatePreview() {
               </div>
               <div>
                 <h1 className="text-3xl font-medium">Email Templates</h1>
-                <p className="text-muted-foreground">Preview and test the email templates used in N8N Bazar</p>
+                <p className="text-muted-foreground">Preview and test the email templates used in AutoWorkflow</p>
               </div>
             </div>
           </div>
@@ -137,7 +137,7 @@ export function EmailTemplatePreview() {
                         </p>
                       </div>
                       <div className="space-y-2 text-sm">
-                        <div><strong>Subject:</strong> Your N8N Bazar Verification Code ✨</div>
+                        <div><strong>Subject:</strong> Your AutoWorkflow Verification Code ✨</div>
                         <div><strong>Features:</strong></div>
                         <ul className="list-disc list-inside space-y-1 text-xs ml-2">
                           <li>Prominent verification code display</li>
@@ -156,7 +156,7 @@ export function EmailTemplatePreview() {
                         </p>
                       </div>
                       <div className="space-y-2 text-sm">
-                        <div><strong>Subject:</strong> Payment Confirmed - Welcome to N8N Bazar! 🎉</div>
+                        <div><strong>Subject:</strong> Payment Confirmed - Welcome to AutoWorkflow! 🎉</div>
                         <div><strong>Features:</strong></div>
                         <ul className="list-disc list-inside space-y-1 text-xs ml-2">
                           <li>Complete subscription details</li>

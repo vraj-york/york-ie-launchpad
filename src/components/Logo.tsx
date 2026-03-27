@@ -34,8 +34,8 @@ export function Logo({ className = "", size = "md", showText = true }: LogoProps
       {/* Logo Text */}
       {showText && (
         <span className={`${textSize} font-bold tracking-tight`}>
-          <span className="text-foreground">N8N</span>
-          <span className="text-primary ml-1">Bazar</span>
+          <span className="text-foreground">Auto</span>
+          <span className="text-primary ml-1">Workflow</span>
         </span>
       )}
     </div>

@@ -211,7 +211,7 @@ export function MainDashboard({
                     <Sparkles className="w-4 h-4 text-primary" />
                   </div>
                   <div className="text-left">
-                    <p className="text-primary font-medium">Welcome to N8N Bazar!</p>
+                    <p className="text-primary font-medium">Welcome to AutoWorkflow!</p>
                     <p className="text-muted-foreground">
                       New here? Take our guided tour to discover all the magical features and get started quickly.
                     </p>

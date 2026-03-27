@@ -55,7 +55,7 @@ export function AuthCodeEmailTemplate({
           fontWeight: '600',
           color: '#ffffff'
         }}>
-          N8N Bazar
+          AutoWorkflow
         </h1>
         
         <p style={{
@@ -87,7 +87,7 @@ export function AuthCodeEmailTemplate({
           color: '#4b5563',
           lineHeight: '1.6'
         }}>
-          We received a request to sign in to your N8N Bazar account. Use the verification code below to complete your magical journey:
+          We received a request to sign in to your AutoWorkflow account. Use the verification code below to complete your magical journey:
         </p>
 
         {/* Auth Code Box */}
@@ -167,7 +167,7 @@ export function AuthCodeEmailTemplate({
           textAlign: 'center',
           margin: '40px 0'
         }}>
-          <a href="https://n8nbazar.com/login" style={{
+          <a href="https://autoworkflow.com/login" style={{
             display: 'inline-block',
             backgroundColor: '#2563EB',
             color: '#ffffff',
@@ -177,7 +177,7 @@ export function AuthCodeEmailTemplate({
             fontSize: '16px',
             fontWeight: '600'
           }}>
-            Continue to N8N Bazar →
+            Continue to AutoWorkflow →
           </a>
         </div>
       </div>
@@ -203,10 +203,10 @@ export function AuthCodeEmailTemplate({
           lineHeight: '1.5'
         }}>
           <p style={{ margin: '0 0 8px 0' }}>
-            N8N Bazar - Magical Automation Platform
+            AutoWorkflow - Magical Automation Platform
           </p>
           <p style={{ margin: '0 0 8px 0' }}>
-            © 2024 N8N Bazar. All rights reserved.
+            © 2024 AutoWorkflow. All rights reserved.
           </p>
           <p style={{ margin: '0' }}>
             <a href="#" style={{ color: '#2563EB', textDecoration: 'none' }}>Unsubscribe</a> | 
@@ -229,7 +229,7 @@ export function generateAuthCodeEmailHTML(props: AuthCodeEmailProps): string {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your N8N Bazar Verification Code</title>
+  <title>Your AutoWorkflow Verification Code</title>
   <!--[if mso]>
   <noscript>
     <xml>
@@ -248,14 +248,14 @@ export function generateAuthCodeEmailHTML(props: AuthCodeEmailProps): string {
       <div style="display: inline-block; width: 48px; height: 48px; background-color: rgba(255, 255, 255, 0.2); border-radius: 12px; margin-bottom: 16px; position: relative">
         <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px">✨</div>
       </div>
-      <h1 style="margin: 0 0 8px 0; font-size: 28px; font-weight: 600; color: #ffffff">N8N Bazar</h1>
+      <h1 style="margin: 0 0 8px 0; font-size: 28px; font-weight: 600; color: #ffffff">AutoWorkflow</h1>
       <p style="margin: 0; font-size: 16px; color: rgba(255, 255, 255, 0.9)">Your magical automation platform</p>
     </div>
 
     <!-- Main Content -->
     <div style="padding: 40px 30px; background-color: #ffffff">
       <h2 style="margin: 0 0 24px 0; font-size: 24px; font-weight: 600; color: #1f2937">Welcome back, ${userName}! ✨</h2>
-      <p style="margin: 0 0 24px 0; font-size: 16px; color: #4b5563; line-height: 1.6">We received a request to sign in to your N8N Bazar account. Use the verification code below to complete your magical journey:</p>
+      <p style="margin: 0 0 24px 0; font-size: 16px; color: #4b5563; line-height: 1.6">We received a request to sign in to your AutoWorkflow account. Use the verification code below to complete your magical journey:</p>
 
       <!-- Auth Code Box -->
       <div style="background-color: #eff6ff; border: 2px solid #2563EB; border-radius: 12px; padding: 32px; text-align: center; margin: 32px 0">
@@ -272,7 +272,7 @@ export function generateAuthCodeEmailHTML(props: AuthCodeEmailProps): string {
       <p style="margin: 32px 0 0 0; font-size: 16px; color: #4b5563">Ready to create some magical workflows? We can't wait to see what you'll automate next!</p>
 
       <div style="text-align: center; margin: 40px 0">
-        <a href="https://n8nbazar.com/login" style="display: inline-block; background-color: #2563EB; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; font-weight: 600">Continue to N8N Bazar →</a>
+        <a href="https://autoworkflow.com/login" style="display: inline-block; background-color: #2563EB; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; font-weight: 600">Continue to AutoWorkflow →</a>
       </div>
     </div>
 
@@ -280,8 +280,8 @@ export function generateAuthCodeEmailHTML(props: AuthCodeEmailProps): string {
     <div style="background-color: #f9fafb; padding: 32px 30px; border-top: 1px solid #e5e7eb; text-align: center">
       <p style="margin: 0 0 16px 0; font-size: 14px; color: #6b7280">This email was sent to <strong>${userEmail}</strong></p>
       <div style="font-size: 12px; color: #9ca3af; line-height: 1.5">
-        <p style="margin: 0 0 8px 0">N8N Bazar - Magical Automation Platform</p>
-        <p style="margin: 0 0 8px 0">© 2024 N8N Bazar. All rights reserved.</p>
+        <p style="margin: 0 0 8px 0">AutoWorkflow - Magical Automation Platform</p>
+        <p style="margin: 0 0 8px 0">© 2024 AutoWorkflow. All rights reserved.</p>
         <p style="margin: 0">
           <a href="#" style="color: #2563EB; text-decoration: none">Unsubscribe</a> | 
           <a href="#" style="color: #2563EB; text-decoration: none; margin-left: 8px">Privacy Policy</a> | 

@@ -1,7 +1,7 @@
 
-  # N8N Bazar Landing Page
+  # AutoWorkflow
 
-  This is a code bundle for N8N Bazar Landing Page. The original project is available at https://www.figma.com/design/jfoOpTkDa8Uad6E7l2FVjY/N8N-Bazar-Landing-Page.
+  This is the AutoWorkflow application. The original Figma reference is available at https://www.figma.com/design/jfoOpTkDa8Uad6E7l2FVjY/N8N-Bazar-Landing-Page.
 
   ## Running the code
 

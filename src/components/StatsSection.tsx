@@ -25,7 +25,7 @@ export function StatsSection() {
             Trusted by Thousands
           </h2>
           <p className="text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
-            Join the growing community of developers and businesses using N8N Bazar to streamline their 
+            Join the growing community of developers and businesses using AutoWorkflow to streamline their 
             automation workflows.
           </p>
         </div>

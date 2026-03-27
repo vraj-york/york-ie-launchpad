@@ -125,7 +125,7 @@ export function PaymentConfirmationEmailTemplate({
           color: '#4b5563',
           lineHeight: '1.6'
         }}>
-          Your payment has been successfully processed and your N8N Bazar subscription is now active. You're all set to create magical workflows!
+          Your payment has been successfully processed and your AutoWorkflow subscription is now active. You're all set to create magical workflows!
         </p>
 
         {/* Subscription Summary */}
@@ -272,7 +272,7 @@ export function PaymentConfirmationEmailTemplate({
           textAlign: 'center',
           margin: '40px 0'
         }}>
-          <a href="https://n8nbazar.com/dashboard" style={{
+          <a href="https://autoworkflow.com/dashboard" style={{
             display: 'inline-block',
             backgroundColor: '#2563EB',
             color: '#ffffff',
@@ -286,7 +286,7 @@ export function PaymentConfirmationEmailTemplate({
             Go to Dashboard ✨
           </a>
           
-          <a href="https://n8nbazar.com/templates" style={{
+          <a href="https://autoworkflow.com/templates" style={{
             display: 'inline-block',
             backgroundColor: 'transparent',
             color: '#2563EB',
@@ -335,14 +335,14 @@ export function PaymentConfirmationEmailTemplate({
             Questions about your subscription? We're here to help!
           </p>
           <p style={{ margin: '0 0 16px 0' }}>
-            <a href="mailto:billing@n8nbazar.com" style={{ color: '#2563EB', textDecoration: 'none' }}>billing@n8nbazar.com</a> | 
-            <a href="mailto:support@n8nbazar.com" style={{ color: '#2563EB', textDecoration: 'none', marginLeft: '8px' }}>support@n8nbazar.com</a>
+            <a href="mailto:billing@autoworkflow.com" style={{ color: '#2563EB', textDecoration: 'none' }}>billing@autoworkflow.com</a> | 
+            <a href="mailto:support@autoworkflow.com" style={{ color: '#2563EB', textDecoration: 'none', marginLeft: '8px' }}>support@autoworkflow.com</a>
           </p>
           <p style={{ margin: '0 0 8px 0' }}>
-            N8N Bazar - Magical Automation Platform
+            AutoWorkflow - Magical Automation Platform
           </p>
           <p style={{ margin: '0 0 8px 0' }}>
-            © 2024 N8N Bazar. All rights reserved.
+            © 2024 AutoWorkflow. All rights reserved.
           </p>
           <p style={{ margin: '0' }}>
             <a href="#" style={{ color: '#2563EB', textDecoration: 'none' }}>Manage Subscription</a> | 
@@ -402,7 +402,7 @@ export function generatePaymentConfirmationEmailHTML(props: PaymentConfirmationE
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Payment Confirmation - N8N Bazar</title>
+  <title>Payment Confirmation - AutoWorkflow</title>
   <!--[if mso]>
   <noscript>
     <xml>
@@ -428,7 +428,7 @@ export function generatePaymentConfirmationEmailHTML(props: PaymentConfirmationE
     <!-- Main Content -->
     <div style="padding: 40px 30px; background-color: #ffffff">
       <h2 style="margin: 0 0 24px 0; font-size: 24px; font-weight: 600; color: #1f2937">Thank you, ${userName}! 🎉</h2>
-      <p style="margin: 0 0 32px 0; font-size: 16px; color: #4b5563; line-height: 1.6">Your payment has been successfully processed and your N8N Bazar subscription is now active. You're all set to create magical workflows!</p>
+      <p style="margin: 0 0 32px 0; font-size: 16px; color: #4b5563; line-height: 1.6">Your payment has been successfully processed and your AutoWorkflow subscription is now active. You're all set to create magical workflows!</p>
 
       <!-- Subscription Summary -->
       <div style="background-color: #eff6ff; border: 2px solid #2563EB; border-radius: 12px; padding: 24px; margin: 32px 0">
@@ -478,8 +478,8 @@ export function generatePaymentConfirmationEmailHTML(props: PaymentConfirmationE
       </div>
 
       <div style="text-align: center; margin: 40px 0">
-        <a href="https://n8nbazar.com/dashboard" style="display: inline-block; background-color: #2563EB; color: #ffffff; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-size: 16px; font-weight: 600; margin-right: 12px">Go to Dashboard ✨</a>
-        <a href="https://n8nbazar.com/templates" style="display: inline-block; background-color: transparent; color: #2563EB; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-size: 16px; font-weight: 600; border: 2px solid #2563EB">Browse Templates</a>
+        <a href="https://autoworkflow.com/dashboard" style="display: inline-block; background-color: #2563EB; color: #ffffff; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-size: 16px; font-weight: 600; margin-right: 12px">Go to Dashboard ✨</a>
+        <a href="https://autoworkflow.com/templates" style="display: inline-block; background-color: transparent; color: #2563EB; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-size: 16px; font-weight: 600; border: 2px solid #2563EB">Browse Templates</a>
       </div>
 
       <p style="margin: 32px 0 0 0; font-size: 14px; color: #6b7280; text-align: center">
@@ -493,11 +493,11 @@ export function generatePaymentConfirmationEmailHTML(props: PaymentConfirmationE
       <div style="font-size: 12px; color: #9ca3af; line-height: 1.5">
         <p style="margin: 0 0 8px 0">Questions about your subscription? We're here to help!</p>
         <p style="margin: 0 0 16px 0">
-          <a href="mailto:billing@n8nbazar.com" style="color: #2563EB; text-decoration: none">billing@n8nbazar.com</a> | 
-          <a href="mailto:support@n8nbazar.com" style="color: #2563EB; text-decoration: none; margin-left: 8px">support@n8nbazar.com</a>
+          <a href="mailto:billing@autoworkflow.com" style="color: #2563EB; text-decoration: none">billing@autoworkflow.com</a> | 
+          <a href="mailto:support@autoworkflow.com" style="color: #2563EB; text-decoration: none; margin-left: 8px">support@autoworkflow.com</a>
         </p>
-        <p style="margin: 0 0 8px 0">N8N Bazar - Magical Automation Platform</p>
-        <p style="margin: 0 0 8px 0">© 2024 N8N Bazar. All rights reserved.</p>
+        <p style="margin: 0 0 8px 0">AutoWorkflow - Magical Automation Platform</p>
+        <p style="margin: 0 0 8px 0">© 2024 AutoWorkflow. All rights reserved.</p>
         <p style="margin: 0">
           <a href="#" style="color: #2563EB; text-decoration: none">Manage Subscription</a> | 
           <a href="#" style="color: #2563EB; text-decoration: none; margin-left: 8px">Privacy Policy</a> | 

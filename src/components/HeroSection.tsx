@@ -57,7 +57,7 @@ export function HeroSection({ onSearch, hasSearched }: HeroSectionProps) {
             <span className="inline-flex items-center gap-4">
               <span className="text-red-500 inline-flex items-center gap-2">
                 <Sparkles className="w-8 h-8 md:w-12 md:h-12" />
-                n8n
+                Auto
               </span>
               <span className="bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">
                 Workflows

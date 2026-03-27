@@ -132,7 +132,7 @@ export function AIWorkflowGeneration({ user, onBuyTokens, onBrowseTemplates }: A
 
   const handleRequestCustom = () => {
     // Navigate to custom workflow request
-    window.open('mailto:support@n8nbazar.com?subject=Custom Workflow Request', '_blank');
+    window.open('mailto:support@autoworkflow.com?subject=Custom Workflow Request', '_blank');
   };
 
   const handleCopyJSON = () => {

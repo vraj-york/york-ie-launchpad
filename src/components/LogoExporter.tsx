@@ -59,7 +59,7 @@ export function LogoExporter() {
     const svgElement = document.getElementById(`logo-${variant}`) as SVGElement;
     if (!svgElement) return;
 
-    const filename = `n8n-bazar-logo-${variant}.${type}`;
+    const filename = `auto-workflow-logo-${variant}.${type}`;
     
     if (type === "svg") {
       downloadSVG(svgElement, filename);
@@ -96,21 +96,21 @@ export function LogoExporter() {
             variant="outline"
             size="sm"
             onClick={() => handleDownload("svg", id)}
-            disabled={downloading === `n8n-bazar-logo-${id}.svg`}
+            disabled={downloading === `auto-workflow-logo-${id}.svg`}
             className="gap-2"
           >
             <Download className="w-4 h-4" />
-            {downloading === `n8n-bazar-logo-${id}.svg` ? "Downloading..." : "SVG"}
+            {downloading === `auto-workflow-logo-${id}.svg` ? "Downloading..." : "SVG"}
           </Button>
           <Button
             variant="outline"
             size="sm"
             onClick={() => handleDownload("png", id)}
-            disabled={downloading === `n8n-bazar-logo-${id}.png`}
+            disabled={downloading === `auto-workflow-logo-${id}.png`}
             className="gap-2"
           >
             <Download className="w-4 h-4" />
-            {downloading === `n8n-bazar-logo-${id}.png` ? "Downloading..." : "PNG"}
+            {downloading === `auto-workflow-logo-${id}.png` ? "Downloading..." : "PNG"}
           </Button>
         </div>
       </CardContent>
@@ -122,7 +122,7 @@ export function LogoExporter() {
       {/* Header */}
       <div className="text-center space-y-4">
         <h1 className="text-3xl bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">
-          N8N Bazar Logo Assets
+          AutoWorkflow Logo Assets
         </h1>
         <p className="text-muted-foreground max-w-2xl mx-auto">
           Download your brand assets in different formats. Available in both SVG (vector) and PNG (raster) formats 
@@ -191,9 +191,9 @@ export function LogoExporter() {
         >
           <svg
             id="logo-box-text"
-            width="200"
+            width="240"
             height="80"
-            viewBox="0 0 200 80"
+            viewBox="0 0 240 80"
             xmlns="http://www.w3.org/2000/svg"
           >
             <defs>
@@ -223,7 +223,7 @@ export function LogoExporter() {
               fontWeight="bold"
               fill="currentColor"
             >
-              N8N
+              Auto
             </text>
             <text
               x="90"
@@ -233,7 +233,7 @@ export function LogoExporter() {
               fontWeight="bold"
               fill="#2563EB"
             >
-              Bazar
+              Workflow
             </text>
           </svg>
         </LogoVariant>
@@ -246,9 +246,9 @@ export function LogoExporter() {
         >
           <svg
             id="logo-complete"
-            width="200"
+            width="240"
             height="80"
-            viewBox="0 0 200 80"
+            viewBox="0 0 240 80"
             xmlns="http://www.w3.org/2000/svg"
           >
             <defs>
@@ -302,7 +302,7 @@ export function LogoExporter() {
               fontWeight="bold"
               fill="currentColor"
             >
-              N8N
+              Auto
             </text>
             <text
               x="90"
@@ -312,7 +312,7 @@ export function LogoExporter() {
               fontWeight="bold"
               fill="#2563EB"
             >
-              Bazar
+              Workflow
             </text>
           </svg>
         </LogoVariant>

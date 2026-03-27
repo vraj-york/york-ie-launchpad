@@ -48,7 +48,7 @@ export function LoginDialog({ isOpen, onClose, onLogin }: LoginDialogProps) {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Welcome to N8N Bazar</DialogTitle>
+          <DialogTitle>Welcome to AutoWorkflow</DialogTitle>
           <DialogDescription>
             Sign in to access thousands of workflow templates and start automating your tasks.
           </DialogDescription>

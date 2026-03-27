@@ -9,7 +9,7 @@ export function TestimonialsSection() {
       role: "DevOps Engineer",
       company: "TechFlow Inc",
       avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b1a8?w=100&h=100&fit=crop&crop=face",
-      content: "N8N Bazar saved us weeks of development time. The templates are well-documented and work perfectly out of the box.",
+      content: "AutoWorkflow saved us weeks of development time. The templates are well-documented and work perfectly out of the box.",
       rating: 5
     },
     {
@@ -25,7 +25,7 @@ export function TestimonialsSection() {
       role: "Product Manager",
       company: "StartupHub",
       avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-      content: "As a non-technical founder, N8N Bazar made automation accessible to me. The templates are easy to understand and customize.",
+      content: "As a non-technical founder, AutoWorkflow made automation accessible to me. The templates are easy to understand and customize.",
       rating: 5
     }
   ];
@@ -39,7 +39,7 @@ export function TestimonialsSection() {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Don't just take our word for it. Here's what developers and businesses 
-            are saying about N8N Bazar.
+            are saying about AutoWorkflow.
           </p>
         </div>
 

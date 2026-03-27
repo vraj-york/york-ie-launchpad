@@ -45,7 +45,7 @@ export function FeaturesSection() {
             </div>
           </div>
           <h2 className="text-4xl mb-4 bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">
-            Why Choose N8N Bazar?
+            Why Choose AutoWorkflow?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             The most comprehensive magical marketplace for N8N workflow templates. 

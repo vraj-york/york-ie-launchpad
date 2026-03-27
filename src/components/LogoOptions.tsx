@@ -54,8 +54,8 @@ const GeometricFlowLogo = ({ size = 'md', showText = true, className = '' }: any
       </div>
       {showText && (
         <span className={`${textSizes[size]} font-bold tracking-tight`}>
-          <span className="text-foreground">N8N</span>
-          <span className="text-primary ml-1">Bazar</span>
+          <span className="text-foreground">Auto</span>
+          <span className="text-primary ml-1">Workflow</span>
         </span>
       )}
     </div>
@@ -75,8 +75,8 @@ const CircuitLogo = ({ size = 'md', showText = true, className = '' }: any) => {
       </div>
       {showText && (
         <span className={`${textSizes[size]} font-bold tracking-tight`}>
-          <span className="text-foreground">N8N</span>
-          <span className="text-primary ml-1">Bazar</span>
+          <span className="text-foreground">Auto</span>
+          <span className="text-primary ml-1">Workflow</span>
         </span>
       )}
     </div>
@@ -96,8 +96,8 @@ const NetworkLogo = ({ size = 'md', showText = true, className = '' }: any) => {
       </div>
       {showText && (
         <span className={`${textSizes[size]} font-bold tracking-tight`}>
-          <span className="text-foreground">N8N</span>
-          <span className="text-primary ml-1">Bazar</span>
+          <span className="text-foreground">Auto</span>
+          <span className="text-primary ml-1">Workflow</span>
         </span>
       )}
     </div>
@@ -118,8 +118,8 @@ const MarketplaceLogo = ({ size = 'md', showText = true, className = '' }: any) 
       </div>
       {showText && (
         <span className={`${textSizes[size]} font-bold tracking-tight`}>
-          <span className="text-foreground">N8N</span>
-          <span className="text-primary ml-1">Bazar</span>
+          <span className="text-foreground">Auto</span>
+          <span className="text-primary ml-1">Workflow</span>
         </span>
       )}
     </div>
@@ -139,8 +139,8 @@ const LayeredLogo = ({ size = 'md', showText = true, className = '' }: any) => {
       </div>
       {showText && (
         <span className={`${textSizes[size]} font-bold tracking-tight`}>
-          <span className="text-foreground">N8N</span>
-          <span className="text-primary ml-1">Bazar</span>
+          <span className="text-foreground">Auto</span>
+          <span className="text-primary ml-1">Workflow</span>
         </span>
       )}
     </div>
@@ -160,8 +160,8 @@ const ZapLogo = ({ size = 'md', showText = true, className = '' }: any) => {
       </div>
       {showText && (
         <span className={`${textSizes[size]} font-bold tracking-tight`}>
-          <span className="text-foreground">N8N</span>
-          <span className="text-primary ml-1">Bazar</span>
+          <span className="text-foreground">Auto</span>
+          <span className="text-primary ml-1">Workflow</span>
         </span>
       )}
     </div>
@@ -181,8 +181,8 @@ const GitBranchLogo = ({ size = 'md', showText = true, className = '' }: any) =>
       </div>
       {showText && (
         <span className={`${textSizes[size]} font-bold tracking-tight`}>
-          <span className="text-foreground">N8N</span>
-          <span className="text-primary ml-1">Bazar</span>
+          <span className="text-foreground">Auto</span>
+          <span className="text-primary ml-1">Workflow</span>
         </span>
       )}
     </div>
@@ -208,8 +208,8 @@ const CustomFlowLogo = ({ size = 'md', showText = true, className = '' }: any) =
       </div>
       {showText && (
         <span className={`${textSizes[size]} font-bold tracking-tight`}>
-          <span className="text-foreground">N8N</span>
-          <span className="text-primary ml-1">Bazar</span>
+          <span className="text-foreground">Auto</span>
+          <span className="text-primary ml-1">Workflow</span>
         </span>
       )}
     </div>
@@ -229,8 +229,8 @@ const ShuffleLogo = ({ size = 'md', showText = true, className = '' }: any) => {
       </div>
       {showText && (
         <span className={`${textSizes[size]} font-bold tracking-tight`}>
-          <span className="text-foreground">N8N</span>
-          <span className="text-primary ml-1">Bazar</span>
+          <span className="text-foreground">Auto</span>
+          <span className="text-primary ml-1">Workflow</span>
         </span>
       )}
     </div>
@@ -250,8 +250,8 @@ const BotLogo = ({ size = 'md', showText = true, className = '' }: any) => {
       </div>
       {showText && (
         <span className={`${textSizes[size]} font-bold tracking-tight`}>
-          <span className="text-foreground">N8N</span>
-          <span className="text-primary ml-1">Bazar</span>
+          <span className="text-foreground">Auto</span>
+          <span className="text-primary ml-1">Workflow</span>
         </span>
       )}
     </div>
@@ -271,8 +271,8 @@ const SparklesLogo = ({ size = 'md', showText = true, className = '' }: any) => 
       </div>
       {showText && (
         <span className={`${textSizes[size]} font-bold tracking-tight`}>
-          <span className="text-foreground">N8N</span>
-          <span className="text-primary ml-1">Bazar</span>
+          <span className="text-foreground">Auto</span>
+          <span className="text-primary ml-1">Workflow</span>
         </span>
       )}
     </div>
@@ -292,8 +292,8 @@ const CodeFlowLogo = ({ size = 'md', showText = true, className = '' }: any) => 
       </div>
       {showText && (
         <span className={`${textSizes[size]} font-bold tracking-tight`}>
-          <span className="text-foreground">N8N</span>
-          <span className="text-primary ml-1">Bazar</span>
+          <span className="text-foreground">Auto</span>
+          <span className="text-primary ml-1">Workflow</span>
         </span>
       )}
     </div>
@@ -329,7 +329,7 @@ export function LogoOptions() {
     {
       id: 'marketplace',
       name: 'Marketplace Store',
-      description: 'Emphasizes the bazar/marketplace concept',
+      description: 'Emphasizes the marketplace concept',
       category: 'marketplace',
       component: MarketplaceLogo
     },
@@ -426,9 +426,9 @@ export function LogoOptions() {
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-medium mb-2">N8N Bazar Logo Options</h1>
+                <h1 className="text-2xl font-medium mb-2">AutoWorkflow Logo Options</h1>
                 <p className="text-muted-foreground">
-                  Explore different logo variations for your N8N workflow marketplace
+                  Explore different logo variations for AutoWorkflow
                 </p>
               </div>
             </div>
@@ -552,7 +552,7 @@ export function LogoOptions() {
               <div className="bg-background border rounded p-3 font-mono text-xs">
                 <div className="space-y-1">
                   <div><span className="text-blue-600">size</span>: <span className="text-green-600">"sm" | "md" | "lg"</span> <span className="text-muted-foreground">// Controls logo size</span></div>
-                  <div><span className="text-blue-600">showText</span>: <span className="text-green-600">boolean</span> <span className="text-muted-foreground">// Shows/hides "N8N Bazar" text</span></div>
+                  <div><span className="text-blue-600">showText</span>: <span className="text-green-600">boolean</span> <span className="text-muted-foreground">// Shows/hides AutoWorkflow text</span></div>
                   <div><span className="text-blue-600">className</span>: <span className="text-green-600">string</span> <span className="text-muted-foreground">// Additional CSS classes</span></div>
                 </div>
               </div>

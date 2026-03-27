@@ -67,7 +67,7 @@ export function ProductTour({
   const tourSteps: TourStep[] = [
     {
       id: 'welcome',
-      title: 'Welcome to N8N Bazar! 🎉',
+      title: 'Welcome to AutoWorkflow! 🎉',
       description: 'Your one-stop platform for N8N workflow templates, AI-generated automations, and powerful integrations. Let\'s take a quick tour to get you started!',
       position: 'center',
       icon: Sparkles,
@@ -147,7 +147,7 @@ export function ProductTour({
     {
       id: 'completion',
       title: 'You\'re All Set! 🚀',
-      description: 'You now know how to use N8N Bazar effectively. Start exploring templates, generate custom workflows, or upload your own creations. Happy automating!',
+      description: 'You now know how to use AutoWorkflow effectively. Start exploring templates, generate custom workflows, or upload your own creations. Happy automating!',
       position: 'center',
       icon: CheckCircle,
     }
@@ -199,7 +199,7 @@ export function ProductTour({
   const completeTour = () => {
     setIsCompleted(true);
     localStorage.setItem('hasCompletedTour', 'true');
-    toast.success('Tour completed! Welcome to N8N Bazar!');
+    toast.success('Tour completed! Welcome to AutoWorkflow!');
     setTimeout(() => {
       onClose();
       setIsCompleted(false);
@@ -379,7 +379,7 @@ export function ProductTour({
                 <CheckCircle className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">Tour Complete!</h3>
-              <p className="text-white/80">You're ready to explore N8N Bazar</p>
+              <p className="text-white/80">You're ready to explore AutoWorkflow</p>
             </div>
           </div>
         )}

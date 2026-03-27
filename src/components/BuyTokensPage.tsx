@@ -784,7 +784,7 @@ export function BuyTokensPage({ user }: BuyTokensPageProps) {
             </p>
             <div className="flex justify-center gap-4">
               <Button variant="outline" size="sm" asChild>
-                <a href="mailto:support@n8nbazar.com">Contact Support</a>
+                <a href="mailto:support@autoworkflow.com">Contact Support</a>
               </Button>
               <Button variant="outline" size="sm" asChild>
                 <a href="#" target="_blank">Pricing FAQ</a>
