@@ -114,7 +114,7 @@ export function CorporationsDirectoryPage() {
             variant="contained"
             startIcon={<Plus size={18} style={{ color: 'rgba(255, 255, 255, 1)' }} />}
             onClick={() => navigate('/corporations/add')}
-            aria-label="Add a new corporation"
+            aria-label="New Test Corporation"
             sx={{
               background: 'rgba(48, 95, 161, 1)',
               color: 'rgba(255, 255, 255, 1)',
@@ -126,7 +126,7 @@ export function CorporationsDirectoryPage() {
               '&:hover': { background: 'rgba(48, 95, 161, 0.9)' },
             }}
           >
-            Add New Corporation
+            New Test Corporation
           </Button>
         </Box>
 

@@ -1,16 +1,16 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Corporation Directory Page', () => {
-  test('shows page title, description, and Add New Corporation button', async ({ page }) => {
+  test('shows page title, description, and New Test Corporation button', async ({ page }) => {
     await page.goto('/corporations');
     await expect(page.getByRole('heading', { name: 'Testing Corporations', level: 1 })).toBeVisible();
     await expect(page.getByText('View and manage all corporations across the platform')).toBeVisible();
-    await expect(page.getByRole('button', { name: 'Add a new corporation' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'New Test Corporation' })).toBeVisible();
   });
 
-  test('Add New Corporation button navigates to /corporations/add', async ({ page }) => {
+  test('New Test Corporation button navigates to /corporations/add', async ({ page }) => {
     await page.goto('/corporations');
-    await page.getByRole('button', { name: 'Add a new corporation' }).click();
+    await page.getByRole('button', { name: 'New Test Corporation' }).click();
     await expect(page).toHaveURL('/corporations/add');
   });
 
