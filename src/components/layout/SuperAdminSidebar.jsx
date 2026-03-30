@@ -114,15 +114,15 @@ export function SuperAdminSidebar({ variant, onNavigate, onClose } = {}) {
       sx={{
         width: isDrawer ? 240 : isOpen ? 240 : 0,
         minWidth: isDrawer ? 240 : isOpen ? 240 : 0,
-        background: 'var(--color-white)',
+        background: 'var(--color-accent-blue)',
         display: 'flex',
         flexDirection: 'column',
         overflow: 'hidden',
         transition: isDrawer ? 'none' : 'width 200ms ease-out',
-        borderRight: isDrawer ? 'none' : '1px solid var(--color-grey-400)',
+        borderRight: isDrawer ? 'none' : '1px solid rgba(255, 255, 255, 0.18)',
       }}
     >
-      <Box sx={{ p: 2, borderBottom: '1px solid var(--color-grey-400)' }}>
+      <Box sx={{ p: 2, borderBottom: '1px solid rgba(255, 255, 255, 0.18)' }}>
         <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <img
@@ -136,7 +136,7 @@ export function SuperAdminSidebar({ variant, onNavigate, onClose } = {}) {
                   fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
                   fontSize: '12px',
                   fontWeight: 400,
-                  color: 'rgba(73, 130, 145, 1)',
+                  color: 'rgba(255, 255, 255, 0.75)',
                   mt: 0.5,
                 }}
               >
@@ -150,7 +150,7 @@ export function SuperAdminSidebar({ variant, onNavigate, onClose } = {}) {
               onClick={onClose}
               aria-label="Close navigation menu"
               sx={{
-                color: 'rgba(73, 130, 145, 1)',
+                color: 'rgba(255, 255, 255, 0.9)',
                 width: 37.25,
                 height: 36,
                 p: 0,
@@ -164,7 +164,7 @@ export function SuperAdminSidebar({ variant, onNavigate, onClose } = {}) {
               onClick={() => dispatch(toggleSidebar())}
               aria-label="Collapse sidebar"
               sx={{
-                color: 'rgba(73, 130, 145, 1)',
+                color: 'rgba(255, 255, 255, 0.9)',
                 width: 37.25,
                 height: 36,
                 p: 0,
@@ -184,7 +184,7 @@ export function SuperAdminSidebar({ variant, onNavigate, onClose } = {}) {
                 px: 2,
                 py: 0.5,
                 display: 'block',
-                color: 'rgba(73, 130, 145, 1)',
+                color: 'rgba(255, 255, 255, 0.65)',
                 fontWeight: 600,
                 fontSize: '0.75rem',
               }}
@@ -225,23 +225,28 @@ export function SuperAdminSidebar({ variant, onNavigate, onClose } = {}) {
                     borderRadius: 1,
                     cursor: 'pointer',
                     background: isDashboardActive || isCompaniesDirectoryActive
-                      ? 'rgba(48, 95, 161, 1)'
-                      : isActive
-                        ? 'var(--color-grey-100)'
-                        : 'transparent',
-                    borderLeft: isActive && !isDashboardActive && !isCompaniesDirectoryActive ? '4px solid var(--color-accent-blue)' : '4px solid transparent',
-                    color: isDashboardActive || isCompaniesDirectoryActive
                       ? 'rgba(255, 255, 255, 1)'
                       : isActive
-                        ? 'var(--color-accent-blue)'
-                        : 'var(--color-primary-dark)',
+                        ? 'rgba(255, 255, 255, 0.16)'
+                        : 'transparent',
+                    borderLeft:
+                      isActive && !isDashboardActive && !isCompaniesDirectoryActive
+                        ? '4px solid rgba(255, 255, 255, 0.95)'
+                        : '4px solid transparent',
+                    color: isDashboardActive || isCompaniesDirectoryActive
+                      ? 'var(--color-accent-blue)'
+                      : isActive
+                        ? 'rgba(255, 255, 255, 1)'
+                        : 'rgba(255, 255, 255, 0.88)',
                     '&:hover': {
                       background: isDashboardActive || isCompaniesDirectoryActive
-                        ? 'rgba(48, 95, 161, 0.9)'
+                        ? 'rgba(255, 255, 255, 0.95)'
                         : isActive
-                          ? 'var(--color-grey-100)'
-                          : 'rgba(231, 237, 247, 0.5)',
-                      color: isDashboardActive || isCompaniesDirectoryActive ? 'rgba(255, 255, 255, 1)' : 'var(--color-accent-blue)',
+                          ? 'rgba(255, 255, 255, 0.22)'
+                          : 'rgba(255, 255, 255, 0.1)',
+                      color: isDashboardActive || isCompaniesDirectoryActive
+                        ? 'var(--color-accent-blue)'
+                        : 'rgba(255, 255, 255, 1)',
                     },
                   }}
                 >
@@ -250,14 +255,22 @@ export function SuperAdminSidebar({ variant, onNavigate, onClose } = {}) {
                     strokeWidth={1.5}
                     style={{
                       flexShrink: 0,
-                      color: Icon === Settings
-                        ? 'rgba(52, 76, 86, 1)'
-                        : isDashboardActive || isCompaniesDirectoryActive
+                      color: isDashboardActive || isCompaniesDirectoryActive
+                        ? 'var(--color-accent-blue)'
+                        : isActive
                           ? 'rgba(255, 255, 255, 1)'
-                          : 'rgba(47, 65, 74, 1)',
+                          : 'rgba(255, 255, 255, 0.88)',
                     }}
                   />
-                  <Typography variant="body2" sx={{ fontWeight: 400, fontSize: '0.875rem', flex: 1 }}>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      fontWeight: 400,
+                      fontSize: '0.875rem',
+                      flex: 1,
+                      color: 'inherit',
+                    }}
+                  >
                     {item.label}
                   </Typography>
                   {item.badgeCount != null && item.badgeCount > 0 && (
