@@ -107,7 +107,7 @@ export function CorporationsDirectoryPage() {
                 color: 'rgba(56, 89, 102, 1)',
               }}
             >
-              View and manage all corporations across the platform
+              This is testing discription
             </Typography>
           </Box>
           <Button

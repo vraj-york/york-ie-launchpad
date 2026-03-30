@@ -4,7 +4,7 @@ test.describe('Corporation Directory Page', () => {
   test('shows page title, description, and New Test Corporation button', async ({ page }) => {
     await page.goto('/corporations');
     await expect(page.getByRole('heading', { name: 'Testing Corporations', level: 1 })).toBeVisible();
-    await expect(page.getByText('View and manage all corporations across the platform')).toBeVisible();
+    await expect(page.getByText('This is testing discription')).toBeVisible();
     await expect(page.getByRole('button', { name: 'New Test Corporation' })).toBeVisible();
   });
 
