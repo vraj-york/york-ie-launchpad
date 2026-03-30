@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { Box, Typography, Card } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { SuperAdminLayout } from '../components/layout/SuperAdminLayout';
@@ -15,6 +15,21 @@ import {
   selectActiveThemePreference,
 } from '../store/slices/authSlice';
 import { setActiveSidebarItem } from '../store/slices/uiSlice';
+import { DashboardMetricCard } from '../components/dashboard/DashboardMetricCard';
+import { LineChart } from '../components/dashboard/LineChart';
+import { mockTimeAggregationOptions } from '../data/mockTimeAggregationOptions';
+
+const PLATFORM_METRIC_KEYS = [
+  { key: 'activeUsers', title: 'Active Users' },
+  { key: 'activeCompanies', title: 'Active Companies' },
+  { key: 'activeTeams', title: 'Active Teams' },
+  { key: 'loginSessions', title: 'Login Sessions' },
+  { key: 'biSpyCoachingSessions', title: 'BiSPy AI Coaching Sessions' },
+  { key: 'bspAssessmentCompliance', title: 'BSP Assessment Compliance' },
+  { key: 'sessionDuration', title: 'Session Duration' },
+  { key: 'peakConcurrentUsers', title: 'Peak Concurrent Users' },
+  { key: 'avgDailyActiveUsers', title: 'Avg. Daily Active Users' },
+];
 
 function themePreferenceToDisplay(preference) {
   if (preference === 'dark') return 'Dark Theme';
@@ -28,6 +43,12 @@ export function DashboardPage() {
   const isEmptyState = useSelector(selectIsDashboardEmpty);
   const personaType = useSelector(selectCurrentPersonaType);
   const themePreference = useSelector(selectActiveThemePreference);
+  const [chartAggregation, setChartAggregation] = useState(
+    () => mockTimeAggregationOptions[0]?.value ?? 'monthly'
+  );
+  const handleChartAggregationChange = useCallback((value) => {
+    setChartAggregation(value);
+  }, []);
 
   useEffect(() => {
     dispatch(setActiveSidebarItem('dashboard'));
@@ -102,8 +123,9 @@ export function DashboardPage() {
             overflow: 'hidden',
             minHeight: 320,
             display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            flexDirection: 'column',
+            alignItems: dashboardLoading || isEmptyState ? 'center' : 'stretch',
+            justifyContent: dashboardLoading || isEmptyState ? 'center' : 'flex-start',
           }}
         >
           {dashboardLoading ? (
@@ -157,12 +179,43 @@ export function DashboardPage() {
               </Typography>
             </Box>
           ) : (
-            <Box sx={{ p: 3 }}>
-              {/* Future: DashboardMetricCard, LineChart, IconHoverCard when dashboardData is populated */}
+            <Box sx={{ p: 3, display: 'flex', flexDirection: 'column', gap: 3, width: '100%' }}>
               {dashboardData && (
-                <Typography sx={{ color: 'rgba(56, 89, 102, 1)', fontSize: 14 }}>
-                  Dashboard content (populated state) to be implemented.
-                </Typography>
+                <>
+                  <Box
+                    sx={{
+                      display: 'grid',
+                      gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
+                      gap: 2,
+                    }}
+                  >
+                    {PLATFORM_METRIC_KEYS.map(({ key, title }) => {
+                      const m = dashboardData.metrics?.[key];
+                      if (!m) return null;
+                      return (
+                        <DashboardMetricCard
+                          key={key}
+                          titleId={`platform-dashboard-metric-${key}`}
+                          title={title}
+                          value={m.value}
+                          description={m.description}
+                          badgeLabel={m.badgeLabel}
+                          badgeType={m.badgeType}
+                        />
+                      );
+                    })}
+                  </Box>
+                  <LineChart
+                    data={dashboardData.chart ?? []}
+                    timeAggregationOptions={mockTimeAggregationOptions.map((o) => ({
+                      value: o.value,
+                      label: o.label,
+                    }))}
+                    selectedTimeAggregation={chartAggregation}
+                    onTimeAggregationChange={handleChartAggregationChange}
+                    chartTitle="Login Activity"
+                  />
+                </>
               )}
             </Box>
           )}

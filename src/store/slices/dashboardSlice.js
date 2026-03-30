@@ -1,12 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { getMockDashboardData } from '../../data/mockDashboard';
 
 export const fetchDashboardData = createAsyncThunk(
   'dashboard/fetchDashboardData',
   async (_, { rejectWithValue }) => {
     try {
-      // Simulate API delay; return null for empty state (or getMockDashboardData() for populated)
       await new Promise((r) => setTimeout(r, 300));
-      return null; // Empty state by default; use getMockDashboardData() to show populated dashboard
+      return getMockDashboardData();
     } catch (err) {
       return rejectWithValue(err.message || 'Failed to load dashboard');
     }

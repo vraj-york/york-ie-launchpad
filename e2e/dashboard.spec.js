@@ -26,10 +26,13 @@ test.describe('Dashboard Page', () => {
     await expect(exportBtn).toHaveText('Export Report');
   });
 
-  test('shows empty state messages when no metrics available', async ({ page }) => {
+  test('shows platform metrics and login activity chart after data loads', async ({ page }) => {
     await page.goto('/dashboard');
-    await expect(page.getByText('No metrics available')).toBeVisible({ timeout: 10000 });
-    await expect(page.getByText('Metrics will appear here once data is generated.')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Active Users', level: 3 })).toBeVisible({
+      timeout: 10000,
+    });
+    await expect(page.getByRole('heading', { name: 'Login Sessions', level: 3 })).toBeVisible();
+    await expect(page.getByRole('graphics-document', { name: 'Login Activity Chart' })).toBeVisible();
   });
 
   test('Dashboard sidebar item is active when on /dashboard', async ({ page }) => {
@@ -78,13 +81,14 @@ test.describe('Dashboard Page', () => {
       await expect(page.getByAltText('BSPBlueprint')).toBeVisible();
     });
 
-    test('page title and empty state use updated typography', async ({ page }) => {
+    test('page title and metric cards use updated typography', async ({ page }) => {
       await page.goto('/dashboard');
       const heading = page.getByRole('heading', { name: 'Dashboard Overview', level: 1 });
       await expect(heading).toBeVisible({ timeout: 10000 });
       await expect(heading).toHaveCSS('font-size', '16px');
-      await expect(page.getByText('No metrics available')).toBeVisible();
-      await expect(page.getByText('Metrics will appear here once data is generated.')).toBeVisible();
+      const metricTitle = page.getByRole('heading', { name: 'Active Users', level: 3 });
+      await expect(metricTitle).toBeVisible({ timeout: 10000 });
+      await expect(metricTitle).toHaveCSS('font-family', /Inter/i);
     });
 
     test('Toggle navigation menu opens mobile sidebar', async ({ page }) => {
