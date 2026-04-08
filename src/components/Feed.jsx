@@ -4,7 +4,7 @@ import { PostCard } from './PostCard'
 
 const posts = [
   {
-    author: 'National Parks Community',
+    author: 'State Parks Community',
     time: '3h',
     text: 'Golden hour never gets old. Share your favorite trail photo below!',
     imageGradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
