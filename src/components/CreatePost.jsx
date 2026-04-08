@@ -13,7 +13,7 @@ export function CreatePost() {
       <div className="fb-create-post__actions">
         <button type="button" className="fb-create-action">
           <LiveVideoIcon />
-          <span>Live video</span>
+          <span>red</span>
         </button>
         <button type="button" className="fb-create-action">
           <PhotoVideoIcon />
