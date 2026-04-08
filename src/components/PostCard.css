@@ -1,0 +1,143 @@
+.fb-post {
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.fb-post__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px 16px 0;
+}
+
+.fb-post__author {
+  display: flex;
+  gap: 8px;
+}
+
+.fb-avatar--post {
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+}
+
+.fb-post__name {
+  font-weight: 600;
+  color: #050505;
+}
+
+.fb-post__name:hover {
+  text-decoration: underline;
+}
+
+.fb-post__meta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8125rem;
+  color: #65676b;
+  margin-top: 2px;
+}
+
+.fb-dot {
+  font-weight: 700;
+}
+
+.fb-post__public {
+  font-size: 0.75rem;
+}
+
+.fb-post__more {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #65676b;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.fb-post__more:hover {
+  background: #f0f2f5;
+}
+
+.fb-post__text {
+  padding: 12px 16px;
+  font-size: 0.9375rem;
+  color: #050505;
+}
+
+.fb-post__media {
+  height: 320px;
+  width: 100%;
+}
+
+.fb-post__stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px 4px;
+  font-size: 0.9375rem;
+  color: #65676b;
+}
+
+.fb-post__likes {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fb-like-bubble {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 1px #ced0d4;
+}
+
+.fb-post__counts {
+  display: flex;
+  gap: 12px;
+}
+
+.fb-post__counts button {
+  color: #65676b;
+}
+
+.fb-post__counts button:hover {
+  text-decoration: underline;
+}
+
+.fb-post__actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 4px 12px 8px;
+  margin: 0 4px;
+  border-top: 1px solid #e4e6eb;
+}
+
+.fb-post__actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 4px;
+  color: #65676b;
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.fb-post__actions button:hover {
+  background: #f0f2f5;
+}
+
+.fb-post__actions button svg {
+  opacity: 0.85;
+}
