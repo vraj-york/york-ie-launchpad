@@ -29,7 +29,7 @@ export function PostCard({ author, time, text, imageGradient, likes, comments, s
         </button>
       </header>
 
-      <p className="fb-post__text">{text}</p>
+      {text ? <p className="fb-post__text">{text}</p> : null}
 
       {imageGradient && (
         <div className="fb-post__media" style={{ background: imageGradient }} role="img" aria-label="" />
