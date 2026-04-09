@@ -2,7 +2,7 @@ import './Stories.css'
 import { PlusIcon } from './Icons'
 
 const stories = [
-  { name: 'Create story', isCreate: true },
+  { name: 'New Story', isCreate: true },
   { name: 'Alex', gradient: 'linear-gradient(135deg, #667eea, #764ba2)' },
   { name: 'Sam', gradient: 'linear-gradient(135deg, #f093fb, #f5576c)' },
   { name: 'Jordan', gradient: 'linear-gradient(135deg, #4facfe, #00f2fe)' },
@@ -30,7 +30,7 @@ export function Stories() {
                       </span>
                     </div>
                   </div>
-                  <span className="fb-story-label">Create story</span>
+                  <span className="fb-story-label">{s.name}</span>
                 </>
               ) : (
                 <>
