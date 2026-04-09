@@ -1,33 +1,43 @@
 "use client";
 
-import * as CollapsiblePrimitive from "@radix-ui/react-collapsible@1.1.3";
+import { Collapsible as CollapsiblePrimitive } from "radix-ui";
+import type * as React from "react";
+
+import { cn } from "@/lib/utils";
 
 function Collapsible({
-  ...props
+	...props
 }: React.ComponentProps<typeof CollapsiblePrimitive.Root>) {
-  return <CollapsiblePrimitive.Root data-slot="collapsible" {...props} />;
+	return <CollapsiblePrimitive.Root data-slot="collapsible" {...props} />;
 }
 
 function CollapsibleTrigger({
-  ...props
-}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleTrigger>) {
-  return (
-    <CollapsiblePrimitive.CollapsibleTrigger
-      data-slot="collapsible-trigger"
-      {...props}
-    />
-  );
+	className,
+	...props
+}: React.ComponentProps<typeof CollapsiblePrimitive.Trigger>) {
+	return (
+		<CollapsiblePrimitive.Trigger
+			data-slot="collapsible-trigger"
+			className={cn("outline-none", className)}
+			{...props}
+		/>
+	);
 }
 
 function CollapsibleContent({
-  ...props
-}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleContent>) {
-  return (
-    <CollapsiblePrimitive.CollapsibleContent
-      data-slot="collapsible-content"
-      {...props}
-    />
-  );
+	className,
+	children,
+	...props
+}: React.ComponentProps<typeof CollapsiblePrimitive.Content>) {
+	return (
+		<CollapsiblePrimitive.Content
+			data-slot="collapsible-content"
+			className={cn("collapsible-animated overflow-hidden", className)}
+			{...props}
+		>
+			<div className="overflow-hidden">{children}</div>
+		</CollapsiblePrimitive.Content>
+	);
 }
 
 export { Collapsible, CollapsibleTrigger, CollapsibleContent };
