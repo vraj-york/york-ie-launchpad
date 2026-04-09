@@ -1,0 +1,92 @@
+.dashboard-shell {
+  min-height: 100vh;
+  background: #f4f6f8;
+}
+
+.dashboard-main {
+  margin: 0.5rem;
+  border-radius: 0.75rem;
+  background: #fff;
+  min-height: calc(100vh - 1rem);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.06);
+}
+
+.dashboard-header {
+  z-index: 10;
+  display: flex;
+  height: 3.75rem;
+  align-items: center;
+  padding: 0 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dashboard-header__crumb-wrap {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+}
+
+.dashboard-breadcrumb-nav {
+  min-width: 0;
+  flex: 1;
+}
+
+.dashboard-breadcrumb-list {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  list-style: none;
+  gap: 0.25rem;
+}
+
+.dashboard-breadcrumb-item {
+  display: flex;
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+.dashboard-body {
+  padding: 1.5rem 1rem;
+}
+
+.dashboard-page-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgb(47, 65, 74);
+}
+
+.dashboard-page-sub {
+  margin-top: 0.5rem;
+}
+
+.dashboard-page-sub a {
+  color: #1877f2;
+  text-decoration: none;
+}
+
+.dashboard-page-sub a:hover {
+  text-decoration: underline;
+}
+
+/* Mirrors Tailwind-style utility names from the referenced UI */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-sm {
+  font-size: 14px;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.text-text-foreground {
+  color: rgb(47, 65, 74);
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
