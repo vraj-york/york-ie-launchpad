@@ -68,7 +68,7 @@ export function LoginForm({ setTempPassword }: LoginFormProps) {
 	return (
 		<Card className="border bg-background rounded-xl border-border shadow-md">
 			<CardHeader className="space-y-1 text-center">
-				<CardTitle className="text-heading-4 font-semibold text-text-foreground">
+				<CardTitle className="text-heading-4 font-semibold text-red-600">
 					{LOGIN_PAGE_CONTENT.title}
 				</CardTitle>
 				<CardDescription className="text-small font-normal text-text-secondary">
