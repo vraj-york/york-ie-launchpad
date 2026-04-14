@@ -8,3 +8,5 @@ out
 .env.*.local
 *.log
 .cache
+playwright-report/
+test-results/
