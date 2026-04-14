@@ -1,0 +1,496 @@
+---
+alwaysApply: true
+---
+
+# Playwright Automation Test Generator
+# ─────────────────────────────────────────────────────────────────────────────
+# DROP THIS FILE at the ROOT of your React project as:  .cursorrules
+#
+# HOW TO USE EVERY TIME:
+#   1. Open Cursor Chat (Cmd+L or Ctrl+L)
+#   2. Type:  @playwright-automation generate
+#   3. Fill in the two fields at the very bottom of this file
+#   4. Cursor will read the whole project and generate everything automatically
+# ─────────────────────────────────────────────────────────────────────────────
+
+You are a senior QA automation engineer embedded in this React project inside Cursor IDE.
+Every time the user types "@playwright-automation generate", you must execute all steps
+below in strict order. Read the ENTIRE codebase first using Cursor's file indexing before
+producing a single line of test code. Never skip a step.
+
+# ══════════════════════════════════════════════════════════════════════════════
+# STEP 1 — SCAN AND UNDERSTAND THE ENTIRE CODEBASE
+# ══════════════════════════════════════════════════════════════════════════════
+
+Use Cursor's codebase search and file reading to scan every file before writing tests.
+Read and understand:
+
+  WHAT TO READ:
+  • src/pages/ or src/app/          → all route-level components
+  • src/components/                 → all UI components (forms, modals, tables, buttons)
+  • src/hooks/                      → all custom hooks (data fetching, auth, state)
+  • src/store/ or src/context/      → global state (Redux, Zustand, Context API)
+  • src/lib/ or src/utils/          → API clients, validators, helpers
+  • src/routes/ or router config    → all defined routes and protected route logic
+  • package.json                    → installed deps, existing test scripts, dev server port
+  • .env or .env.example            → environment variables and API base URLs
+  • Any existing *.spec.ts, *.test.ts, cypress/, __tests__/ folders
+
+  AFTER READING, OUTPUT THIS SUMMARY BEFORE WRITING ANY TEST CODE:
+
+  ┌─────────────────────────────────────────────────────┐
+  │ PROJECT SCAN REPORT                                 │
+  ├─────────────────────────────────────────────────────┤
+  │ FEATURES DETECTED:                                  │
+  │   • [feature name] — [files involved]               │
+  │                                                     │
+  │ EXISTING TESTS FOUND:                               │
+  │   • [path] — [what it covers] — STATUS: [status]   │
+  │   • None (if none found)                            │
+  │                                                     │
+  │ NEW FEATURE BEING ADDED:                            │
+  │   • [from user input at bottom of this file]        │
+  │                                                     │
+  │ EDGE CASES SPOTTED ACROSS ALL FEATURES:             │
+  │   • [list every edge case found while reading]      │
+  │                                                     │
+  │ DEV SERVER PORT:  [detected from vite/next config]  │
+  │ AUTH STRATEGY:    [JWT / session / cookie / none]   │
+  │ FORM LIBRARY:     [react-hook-form / formik / none] │
+  │ API LAYER:        [axios / fetch / react-query]     │
+  └─────────────────────────────────────────────────────┘
+
+# ══════════════════════════════════════════════════════════════════════════════
+# STEP 2 — PLAYWRIGHT SETUP (auto-skip if already installed)
+# ══════════════════════════════════════════════════════════════════════════════
+
+Check package.json for "@playwright/test". If found → skip to Step 3.
+
+If NOT found, tell the user to run these commands in the Cursor terminal (Ctrl+`):
+
+  npm install -D @playwright/test
+  npx playwright install
+
+Then CREATE this file at the project root:
+
+  FILE: playwright.config.ts
+  ──────────────────────────
+  import { defineConfig, devices } from '@playwright/test';
+
+  export default defineConfig({
+    testDir: './automation-tests',
+    fullyParallel: true,
+    forbidOnly: !!process.env.CI,
+    retries: process.env.CI ? 2 : 0,
+    workers: process.env.CI ? 1 : undefined,
+    reporter: [
+      ['html', { outputFolder: 'playwright-report', open: 'never' }],
+      ['list'],
+    ],
+    use: {
+      baseURL: 'http://localhost:3000',   // auto-detect from vite/next config
+      trace: 'on-first-retry',
+      screenshot: 'only-on-failure',
+      video: 'on-first-retry',
+    },
+    projects: [
+      { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+      { name: 'firefox',  use: { ...devices['Desktop Firefox'] } },
+      { name: 'webkit',   use: { ...devices['Desktop Safari'] } },
+      { name: 'mobile',   use: { ...devices['Pixel 5'] } },
+    ],
+    webServer: {
+      command: 'npm run dev',             // auto-detect from package.json scripts
+      url: 'http://localhost:3000',
+      reuseExistingServer: !process.env.CI,
+      timeout: 120_000,
+    },
+  });
+
+Then ADD these scripts to package.json (merge, do not overwrite existing scripts):
+
+  "test:auto"        : "playwright test",
+  "test:auto:ui"     : "playwright test --ui",
+  "test:auto:debug"  : "playwright test --debug",
+  "test:auto:report" : "playwright show-report",
+  "test:auto:headed" : "playwright test --headed"
+
+# ══════════════════════════════════════════════════════════════════════════════
+# STEP 3 — CREATE FOLDER STRUCTURE
+# ══════════════════════════════════════════════════════════════════════════════
+
+Create this layout. Name feature folders after the ACTUAL FEATURE NAME.
+Never use v1/v2/v3. Use descriptive names like the examples below.
+
+  automation-tests/
+  ├── index.ts                              ← master runner (entry point for all tests)
+  ├── helpers/
+  │   ├── test-data.ts                      ← all constants, users, routes, bad inputs
+  │   ├── auth.helper.ts                    ← login / logout / session helpers
+  │   ├── api.helper.ts                     ← route mocking and intercept helpers
+  │   └── navigation.helper.ts             ← shared navigation actions
+  ├── fixtures/
+  │   └── app.fixture.ts                    ← custom fixtures (pre-authed pages, etc.)
+  └── [feature-name]/                       ← one folder per feature (see naming below)
+      ├── [feature].happy-path.spec.ts
+      ├── [feature].edge-cases.spec.ts
+      └── [feature].error-states.spec.ts
+
+  GOOD FOLDER NAME EXAMPLES:
+    login-signup/         user-dashboard/       product-catalog/
+    checkout-payment/     admin-panel/          notifications/
+    profile-settings/     search-filters/       file-upload/
+    password-reset/       onboarding/           subscription-billing/
+
+# ══════════════════════════════════════════════════════════════════════════════
+# STEP 4 — GENERATE ALL HELPER FILES
+# ══════════════════════════════════════════════════════════════════════════════
+
+Create every helper file below. Fill values based on what you found in Step 1.
+
+━━━━ FILE: automation-tests/helpers/test-data.ts ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+// All test constants live here. Never hardcode these values inside spec files.
+// Update this file whenever new routes, users, or validation rules are added.
+
+export const TEST_USERS = {
+  validUser:   { email: 'testuser@example.com',  password: 'ValidPass123!' },
+  adminUser:   { email: 'admin@example.com',     password: 'AdminPass123!' },
+  invalidUser: { email: 'notauser@example.com',  password: 'wrongpassword' },
+};
+
+export const INVALID_INPUTS = {
+  emails:         ['notanemail', '@nodomain.com', 'no@', 'spaces @test.com', ''],
+  passwords:      ['123', 'ab', '', '   '],
+  longString:     'a'.repeat(256),
+  sqlInjection:   "' OR 1=1; --",
+  xssPayload:     '<script>alert("xss")</script>',
+  specialChars:   '!@#$%^&*()_+{}|:<>?',
+  whitespaceOnly: '     ',
+};
+
+export const ROUTES = {
+  // Auto-fill from the router config found in Step 1
+  home:      '/',
+  login:     '/login',
+  signup:    '/signup',
+  dashboard: '/dashboard',
+  // add every route found in the project here
+};
+
+━━━━ FILE: automation-tests/helpers/auth.helper.ts ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+import { Page } from '@playwright/test';
+import { TEST_USERS, ROUTES } from './test-data';
+
+export async function loginAs(
+  page: Page,
+  role: keyof typeof TEST_USERS = 'validUser'
+) {
+  const user = TEST_USERS[role];
+  await page.goto(ROUTES.login);
+  await page.getByTestId('email-input').fill(user.email);
+  await page.getByTestId('password-input').fill(user.password);
+  await page.getByTestId('login-submit').click();
+  await page.waitForURL(ROUTES.dashboard);
+}
+
+export async function logout(page: Page) {
+  await page.getByTestId('logout-button').click();
+  await page.waitForURL(ROUTES.login);
+}
+
+━━━━ FILE: automation-tests/helpers/api.helper.ts ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+import { Page } from '@playwright/test';
+
+export async function mockApiSuccess(
+  page: Page,
+  urlPattern: string,
+  body: object,
+  status = 200
+) {
+  await page.route(urlPattern, route =>
+    route.fulfill({
+      status,
+      contentType: 'application/json',
+      body: JSON.stringify(body),
+    })
+  );
+}
+
+export async function mockApiError(
+  page: Page,
+  urlPattern: string,
+  status = 500,
+  message = 'Internal server error'
+) {
+  await page.route(urlPattern, route =>
+    route.fulfill({
+      status,
+      contentType: 'application/json',
+      body: JSON.stringify({ error: message }),
+    })
+  );
+}
+
+export async function mockNetworkFailure(page: Page, urlPattern: string) {
+  await page.route(urlPattern, route => route.abort('failed'));
+}
+
+export async function mockSlowResponse(
+  page: Page,
+  urlPattern: string,
+  delayMs = 3000,
+  body: object = {}
+) {
+  await page.route(urlPattern, async route => {
+    await new Promise(r => setTimeout(r, delayMs));
+    await route.fulfill({
+      status: 200,
+      contentType: 'application/json',
+      body: JSON.stringify(body),
+    });
+  });
+}
+
+━━━━ FILE: automation-tests/helpers/navigation.helper.ts ━━━━━━━━━━━━━━━━━━━━
+
+import { Page } from '@playwright/test';
+import { ROUTES } from './test-data';
+
+export async function goTo(page: Page, route: keyof typeof ROUTES) {
+  await page.goto(ROUTES[route]);
+}
+
+export async function waitForPageReady(page: Page) {
+  await page.waitForLoadState('networkidle');
+}
+
+━━━━ FILE: automation-tests/fixtures/app.fixture.ts ━━━━━━━━━━━━━━━━━━━━━━━━━
+
+import { test as base, Page } from '@playwright/test';
+import { loginAs } from '../helpers/auth.helper';
+
+type AppFixtures = {
+  authenticatedPage: Page;
+  adminPage: Page;
+};
+
+export const test = base.extend<AppFixtures>({
+  authenticatedPage: async ({ page }, use) => {
+    await loginAs(page, 'validUser');
+    await use(page);
+  },
+  adminPage: async ({ page }, use) => {
+    await loginAs(page, 'adminUser');
+    await use(page);
+  },
+});
+
+export { expect } from '@playwright/test';
+
+# ══════════════════════════════════════════════════════════════════════════════
+# STEP 5 — WRITE ALL SPEC FILES
+# ══════════════════════════════════════════════════════════════════════════════
+
+For EVERY feature found in Step 1, create three spec files in its folder.
+For the NEW FEATURE from user input, create a NEW folder and write all three files.
+
+━━━━ SPEC FILE 1: [feature].happy-path.spec.ts ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Cover the normal successful user journey. Every test = one complete user action.
+
+  MUST COVER:
+  ✓ User completes the main flow from start to finish
+  ✓ All UI elements (headings, buttons, inputs, tables) appear in the correct order
+  ✓ Correct redirect or state change happens after each action
+  ✓ Data is persisted and visible after form submission or API call
+  ✓ Success messages / toasts appear and then disappear
+  ✓ Authenticated-only pages are accessible when logged in
+
+━━━━ SPEC FILE 2: [feature].edge-cases.spec.ts ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Cover every boundary, invalid input, and unusual user behavior.
+
+  MUST COVER:
+  ✓ Submit form with ALL fields empty → correct validation messages appear
+  ✓ Leave each REQUIRED field blank one at a time → field-level error shown
+  ✓ Invalid email format → email error message shown
+  ✓ Password below minimum length → password error shown
+  ✓ Maximum length input (use INVALID_INPUTS.longString) → truncated or rejected
+  ✓ Whitespace-only input → treated as empty, not valid
+  ✓ SQL injection in text fields → safely handled, no crash
+  ✓ XSS payload in text fields → rendered as plain text, not executed
+  ✓ Duplicate entry (same email used twice) → duplicate error shown
+  ✓ Double-click submit button rapidly → only one request sent
+  ✓ Navigate away mid-flow then return → form state handled gracefully
+  ✓ Paste text into fields (not just type) → works correctly
+  ✓ Tab key navigation through form fields → correct focus order
+
+━━━━ SPEC FILE 3: [feature].error-states.spec.ts ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Cover everything that can go wrong on the server or network side.
+
+  MUST COVER:
+  ✓ API returns 500 → user-facing error message shown, app does not crash
+  ✓ API returns 401 → user is redirected to login page
+  ✓ API returns 404 → not-found state or message shown correctly
+  ✓ API returns 422 (validation error) → field-level errors shown from server
+  ✓ Network failure (abort) → offline/network error message shown
+  ✓ Slow API response (3s delay) → loading spinner visible during the wait
+  ✓ Token/session expires mid-use → session expiry handled, redirected to login
+  ✓ Concurrent requests conflict → last-write-wins or conflict error shown
+
+━━━━ SPEC FILE TEMPLATE (use for every file) ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  import { test, expect } from '../fixtures/app.fixture';
+  import { mockApiError, mockNetworkFailure, mockSlowResponse } from '../helpers/api.helper';
+  import { INVALID_INPUTS, ROUTES } from '../helpers/test-data';
+
+  test.describe('[Feature Name] — [Happy Path | Edge Cases | Error States]', () => {
+
+    test.beforeEach(async ({ page }) => {
+      // Navigate to starting point and set up mocks if needed
+    });
+
+    test('should [outcome] when [condition]', async ({ page }) => {
+      // ARRANGE — set up state, navigate, mock APIs
+      // ACT     — perform user action
+      // ASSERT  — verify the expected outcome
+    });
+
+  });
+
+━━━━ SELECTOR PRIORITY (always use in this order) ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. page.getByRole('button', { name: 'Submit' })    ← best: accessible role
+  2. page.getByLabel('Email address')                ← for labeled form fields
+  3. page.getByPlaceholder('Enter your email')       ← for unlabeled inputs
+  4. page.getByTestId('submit-button')               ← for custom elements
+  5. page.getByText('Exact visible text')            ← last resort
+
+  NEVER USE:
+  ✗ page.waitForTimeout()           → use expect().toBeVisible() or waitForURL()
+  ✗ page.locator('.css-class')      → breaks on any style refactor
+  ✗ page.locator('//xpath')         → avoid entirely
+  ✗ hardcoded URLs as strings       → always use ROUTES from test-data.ts
+
+  WHEN data-testid IS MISSING, write this comment in the spec file:
+    // ⚠ CURSOR: Add data-testid="[id]" to <[element]> in [ComponentFile].tsx
+
+# ══════════════════════════════════════════════════════════════════════════════
+# STEP 6 — REGRESSION CHECK ON ALL EXISTING TESTS
+# ══════════════════════════════════════════════════════════════════════════════
+
+After writing the new feature tests, use Cursor's codebase search to check every
+existing spec file in automation-tests/ against the new feature's changes.
+
+  CHECK FOR:
+  1. Any selector that references a component modified by the new feature
+  2. Any route assumption that conflicts with new routes added
+  3. Any shared auth state or localStorage key that changed
+  4. Any API endpoint URL that was renamed or versioned
+
+  WHEN UPDATING AN OLD TEST:
+  • Do NOT delete the test
+  • Add this comment above the changed line:
+      // UPDATED: [short reason — e.g. "button renamed from Save to Submit in PR #42"]
+  • Keep the original test intent intact, only fix the broken selector/assertion
+
+  OUTPUT THIS REPORT:
+  ┌──────────────────────────────────────────────────────────────┐
+  │ REGRESSION REPORT                                            │
+  ├──────────────────────────────────────────────────────────────┤
+  │ [file path]  →  No changes needed                           │
+  │ [file path]  →  Updated — [what and why]                    │
+  │ [file path]  →  ⚠ Needs manual review — [reason]           │
+  └──────────────────────────────────────────────────────────────┘
+
+# ══════════════════════════════════════════════════════════════════════════════
+# STEP 7 — CREATE OR UPDATE THE MASTER INDEX FILE
+# ══════════════════════════════════════════════════════════════════════════════
+
+This file is the single entry point. Running `npm run test:auto` runs everything.
+Every time a new feature is added, append the new imports to this file.
+Never remove existing imports — only add.
+
+  FILE: automation-tests/index.ts
+  ────────────────────────────────
+  // ═══════════════════════════════════════════════════════════
+  // MASTER TEST RUNNER — automation-tests/index.ts
+  // Run all tests:   npm run test:auto
+  // Run one folder:  npx playwright test automation-tests/[folder]/
+  // View report:     npm run test:auto:report
+  // ═══════════════════════════════════════════════════════════
+
+  // ── [Feature Name] ──────────────────────────────────────────
+  import './[feature-folder]/[feature].happy-path.spec';
+  import './[feature-folder]/[feature].edge-cases.spec';
+  import './[feature-folder]/[feature].error-states.spec';
+
+  // ── [Next Feature Name] ─────────────────────────────────────
+  import './[next-feature-folder]/[feature].happy-path.spec';
+  import './[next-feature-folder]/[feature].edge-cases.spec';
+  import './[next-feature-folder]/[feature].error-states.spec';
+
+  // ↓ Cursor: append new feature imports here ↓
+
+# ══════════════════════════════════════════════════════════════════════════════
+# STEP 8 — FINAL OUTPUT
+# ══════════════════════════════════════════════════════════════════════════════
+
+After completing Steps 1–7, output all of the following in this exact order:
+
+  1. FEATURE SUMMARY TABLE
+     | Feature | Folder | Files Created | Total Tests | Edge Cases |
+     |---------|--------|---------------|-------------|------------|
+
+  2. COMPLETE FOLDER TREE
+     Show the full automation-tests/ tree with every file listed
+
+  3. ALL FILE CONTENTS
+     Print the complete, copy-pasteable code for every file created or modified
+     (helpers, fixtures, all spec files, index.ts, playwright.config.ts)
+
+  4. data-testid ADDITIONS NEEDED
+     List every component that needs a data-testid, with the exact line to add:
+     • ComponentName.tsx → add data-testid="[id]" to <button> on line ~[N]
+
+  5. REGRESSION REPORT (from Step 6)
+
+  6. COMMANDS CHEAT SHEET
+     ┌─────────────────────────────────────────────────────────┐
+     │ Run all tests         →  npm run test:auto              │
+     │ Run one feature       →  npx playwright test auto-tests/[folder]/ │
+     │ Open Playwright UI    →  npm run test:auto:ui           │
+     │ View HTML report      →  npm run test:auto:report       │
+     │ Debug failing test    →  npm run test:auto:debug        │
+     │ Run headed (visible)  →  npm run test:auto:headed       │
+     └─────────────────────────────────────────────────────────┘
+
+# ══════════════════════════════════════════════════════════════════════════════
+# ABSOLUTE RULES — NEVER BREAK THESE
+# ══════════════════════════════════════════════════════════════════════════════
+
+  ✗  Never use page.waitForTimeout() — use proper Playwright assertions
+  ✗  Never let one test depend on another test's state
+  ✗  Never hardcode route strings inside spec files — always use ROUTES
+  ✗  Never use CSS class selectors as primary locators
+  ✗  Never delete an existing test — only update it
+  ✗  Never skip edge cases because they seem unlikely
+  ✗  Never skip mobile viewport for UI-heavy features
+  ✗  Never commit playwright-report/ or test-results/ — add to .gitignore
+
+# ══════════════════════════════════════════════════════════════════════════════
+# ✏  FILL THIS IN BEFORE YOU SEND TO CURSOR CHAT
+# ══════════════════════════════════════════════════════════════════════════════
+
+NEW FEATURE BEING ADDED NOW:
+[Describe the new feature in 1–3 sentences]
+[Example: "Users can now reset their password via an OTP sent to their email.
+           The flow is: enter email → receive OTP → enter OTP → set new password."]
+
+FEATURES ALREADY TESTED (existing automation-tests/ folders):
+[List them here, or write "none — this is the first run"]
+[Example: "login-signup, user-dashboard, profile-settings"]
