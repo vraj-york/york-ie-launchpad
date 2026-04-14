@@ -1,0 +1,36 @@
+.home {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 20px 24px 88px;
+  max-width: 100%;
+}
+
+.home-feed {
+  width: 100%;
+  max-width: 630px;
+  flex-shrink: 0;
+}
+
+.home-aside {
+  display: none;
+  width: 320px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1160px) {
+  .home-aside {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    padding: 8px 0 72px;
+    gap: 0;
+  }
+
+  .home-feed {
+    max-width: 100%;
+  }
+}

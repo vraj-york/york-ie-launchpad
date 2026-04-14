@@ -1,0 +1,118 @@
+.right-panel {
+  position: sticky;
+  top: 24px;
+}
+
+.right-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.right-profile-avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.right-profile-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.right-profile-user {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.right-profile-name {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.right-link {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.right-link--muted {
+  color: var(--text);
+}
+
+.right-suggestions-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.right-suggestions-title {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.right-suggestion-list {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.right-suggestion {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.right-suggestion-avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.right-suggestion-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-suggestion-user {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.right-suggestion-meta {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.right-follow {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.right-footer {
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  line-height: 1.5;
+}
+
+.right-footer-links {
+  margin: 0 0 10px;
+}
+
+.right-footer-copy {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
