@@ -5,6 +5,7 @@ export * from "./company-directory";
 export * from "./corporate-directory";
 export * from "./dashboard";
 export * from "./invoice-management";
+export * from "./promo-code-management";
 export * from "./layout";
 export * from "./roles-permissions";
 export * from "./ThemeToggle";

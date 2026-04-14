@@ -5,5 +5,6 @@ export * from "./company-directory";
 export * from "./corporation-directory";
 export * from "./dashboard";
 export * from "./invoice-management";
+export * from "./promo-code-management";
 export * from "./roles-permissions";
 export * from "./user-directory";

@@ -42,6 +42,7 @@ export const ROUTES: AppRoutes = {
 	},
 	finance: {
 		invoices: "/finance/invoices",
+		promoCodes: "/finance/promo-codes",
 	},
 	userDirectory: {
 		root: "/user-directory",

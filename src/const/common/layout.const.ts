@@ -4,6 +4,7 @@ import {
 	MapPin,
 	Receipt,
 	Shield,
+	Tag,
 	Users,
 } from "lucide-react";
 import type { SidebarMenuSection } from "@/types";
@@ -47,6 +48,13 @@ export const SIDEBAR_MENU: SidebarMenuSection[] = [
 				label: "Invoice Management",
 				icon: Receipt,
 				path: "/finance/invoices",
+				superAdminOnly: true,
+			},
+			{
+				id: "promo-code-management",
+				label: "Promo Code Management",
+				icon: Tag,
+				path: "/finance/promo-codes",
 				superAdminOnly: true,
 			},
 		],

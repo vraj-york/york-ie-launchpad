@@ -25,6 +25,7 @@ const badgeVariants = cva(
 				yellow: "bg-warning-bg text-interactive-warning-active",
 				yellowFilled: "bg-interactive-warning text-light-same",
 				blue: "bg-info-bg text-info",
+				brandSecondary: "border-transparent bg-brand-secondary-bg text-brand-secondary-text",
 				purpleFilled: "bg-interactive-neutral-active text-light-same",
 				redFilled: "bg-interactive-error text-light-same",
 			},

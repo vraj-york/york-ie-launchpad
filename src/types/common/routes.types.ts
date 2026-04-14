@@ -42,6 +42,7 @@ export interface RolesRoutes {
 
 export interface FinanceRoutes {
 	invoices: string;
+	promoCodes: string;
 }
 
 export interface CompanyDirectoryRoutes {

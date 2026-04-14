@@ -19,6 +19,7 @@ import {
 	ForgotPasswordPage,
 	InvoiceManagementPage,
 	LoginPage,
+	PromoCodeManagementPage,
 	RolesPermissionsPage,
 	UserDirectoryPage,
 	ViewCompanyPage,
@@ -221,6 +222,16 @@ export const routes: RouteConfig[] = [
 			<ProtectedRoute>
 				<SuperAdminRoute>
 					<InvoiceManagementPage />
+				</SuperAdminRoute>
+			</ProtectedRoute>
+		),
+	},
+	{
+		path: ROUTES.finance.promoCodes,
+		element: (
+			<ProtectedRoute>
+				<SuperAdminRoute>
+					<PromoCodeManagementPage />
 				</SuperAdminRoute>
 			</ProtectedRoute>
 		),
