@@ -1,8 +1,9 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Corporation Directory Page', () => {
-  test('shows subtitle, corporation list after load', async ({ page }) => {
+  test('shows title, subtitle, corporation list after load', async ({ page }) => {
     await page.goto('/corporations');
+    await expect(page.getByRole('heading', { name: 'Test title', level: 1 })).toBeVisible();
     await expect(page.getByText('View and manage', { exact: true })).toBeVisible();
     await expect(page.getByText(/Showing \d+ corporations/)).toBeVisible({ timeout: 10000 });
   });

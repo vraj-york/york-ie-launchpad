@@ -86,6 +86,19 @@ export function CorporationsDirectoryPage() {
       <Box component="main" role="main" sx={{ py: 3, px: 0 }}>
         <Box sx={{ mb: 3 }}>
           <Typography
+            component="h1"
+            variant="h5"
+            sx={{
+              fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
+              fontWeight: 600,
+              fontSize: 20,
+              color: 'rgba(211, 47, 47, 1)',
+              mb: 0.5,
+            }}
+          >
+            {corporationsDirectoryPageContent.pageTitle}
+          </Typography>
+          <Typography
             component="p"
             sx={{
               fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
