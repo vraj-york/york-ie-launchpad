@@ -98,3 +98,21 @@ export function IconGrid({ size = 24 }) {
     </svg>
   )
 }
+
+export function IconVolumeOn({ size = 24 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
+      <path d="M11 5 6 9H3v6h3l5 4V5z" />
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07M17.66 6.34a8 8 0 0 1 0 11.32" />
+    </svg>
+  )
+}
+
+export function IconVolumeOff({ size = 24 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
+      <path d="M11 5 6 9H3v6h3l5 4V5z" />
+      <path d="m23 9-6 6M17 9l6 6" />
+    </svg>
+  )
+}

@@ -36,10 +36,10 @@ export default function Layout({ children }) {
             <IconCompass />
             <span>Explore</span>
           </NavLink>
-          <button type="button" className="sidebar-link sidebar-link--btn">
+          <NavLink to="/reels" className={navClass}>
             <IconReels />
             <span>Reels</span>
-          </button>
+          </NavLink>
           <button type="button" className="sidebar-link sidebar-link--btn">
             <IconPaperPlane />
             <span>Messages</span>
@@ -64,10 +64,10 @@ export default function Layout({ children }) {
           <IconCompass size={26} />
           <span className="sr-only">Explore</span>
         </NavLink>
-        <button type="button" className="sidebar-link mobile-nav-btn">
+        <NavLink to="/reels" className={navClass}>
           <IconReels size={26} />
           <span className="sr-only">Reels</span>
-        </button>
+        </NavLink>
         <button type="button" className="sidebar-link mobile-nav-btn">
           <IconPaperPlane size={26} />
           <span className="sr-only">Messages</span>

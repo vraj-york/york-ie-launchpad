@@ -1,0 +1,343 @@
+.reels-page {
+  height: 100dvh;
+  max-height: 100vh;
+  background: #000;
+  overflow: hidden;
+}
+
+.reels-scroller {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+}
+
+.reel-slide {
+  position: relative;
+  height: 100%;
+  min-height: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 56px;
+  box-sizing: border-box;
+}
+
+.reel-frame {
+  position: relative;
+  height: 100%;
+  max-height: 100%;
+  aspect-ratio: 9 / 16;
+  width: auto;
+  max-width: min(480px, calc(100vw - 72px));
+  background: #0a0a0a;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.reel-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.95);
+  transform-origin: left center;
+  z-index: 12;
+  pointer-events: none;
+}
+
+.reel-video-hit {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: #000;
+  cursor: pointer;
+  display: block;
+}
+
+.reel-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.reel-burst {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.45));
+  animation: reel-burst 0.88s ease-out forwards;
+}
+
+@keyframes reel-burst {
+  0% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  18% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  35% {
+    transform: scale(0.96);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+
+.reel-pause-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.reel-mute {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 14;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgba(38, 38, 38, 0.65);
+  backdrop-filter: blur(8px);
+  border: none;
+  cursor: pointer;
+}
+
+.reel-mute:hover {
+  background: rgba(58, 58, 58, 0.75);
+}
+
+.reel-right-rail {
+  position: absolute;
+  right: 6px;
+  bottom: 120px;
+  z-index: 13;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.reel-avatar-stack {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 4px;
+}
+
+.reel-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.reel-follow-plus {
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent, #0095f6);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000;
+  cursor: pointer;
+}
+
+.reel-rail-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #fff;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.65));
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.reel-rail-count {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.reel-rail-audio {
+  margin-top: 4px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.65));
+}
+
+.reel-disc {
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 3px solid #1a1a1a;
+  outline: 2px solid #fff;
+  background-size: cover;
+  background-position: center;
+  background-color: #222;
+}
+
+.reel-disc--spin {
+  animation: reel-disc-spin 3.5s linear infinite;
+}
+
+@keyframes reel-disc-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.reel-bottom {
+  position: absolute;
+  left: 10px;
+  right: 58px;
+  bottom: 10px;
+  z-index: 11;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.35) 45%,
+    transparent 100%
+  );
+  margin: 0 -10px -10px;
+  padding: 28px 14px 14px 20px;
+  border-radius: 0 0 0 0;
+}
+
+.reel-user-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.reel-username {
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+.reel-follow-pill {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.reel-follow-pill:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.reel-caption {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  color: #fafafa;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.reel-audio {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: #f5f5f5;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.reel-audio-note {
+  flex-shrink: 0;
+  opacity: 0.95;
+}
+
+.reel-audio-marquee {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.reel-audio-marquee span {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .reels-page {
+    height: calc(100dvh - 52px - env(safe-area-inset-bottom, 0px));
+    max-height: calc(100vh - 52px - env(safe-area-inset-bottom, 0px));
+  }
+
+  .reel-slide {
+    padding-right: 48px;
+  }
+
+  .reel-frame {
+    max-width: min(480px, calc(100vw - 56px));
+  }
+
+  .reel-right-rail {
+    right: 4px;
+    bottom: 108px;
+    gap: 12px;
+  }
+}
+
+@media (min-width: 769px) {
+  .reels-page {
+    height: 100vh;
+    height: 100dvh;
+  }
+}

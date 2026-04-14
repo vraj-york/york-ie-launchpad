@@ -57,3 +57,47 @@ export const posts = [
     timeAgo: '1d',
   },
 ]
+
+/** Short public sample clips — vertical framing via CSS `object-fit: cover`. */
+export const reels = [
+  {
+    id: 'r1',
+    username: 'urban.frames',
+    avatar: 'https://picsum.photos/seed/r1/120/120',
+    video: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
+    caption: 'Golden hour walk through the park — sound on for vibes.',
+    audioLabel: 'Original audio · urban.frames',
+    likes: 84200,
+    comments: 1204,
+  },
+  {
+    id: 'r2',
+    username: 'wildlight',
+    avatar: 'https://picsum.photos/seed/r2/120/120',
+    video: 'https://www.w3schools.com/html/mov_bbb.mp4',
+    caption: 'Testing a new lens. The bokeh is unreal.',
+    audioLabel: 'Sunset Drive · wildlight',
+    likes: 201000,
+    comments: 3402,
+  },
+  {
+    id: 'r3',
+    username: 'kitchennotes',
+    avatar: 'https://picsum.photos/seed/r3/120/120',
+    video: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4',
+    caption: 'POV: you finally nailed the recipe.',
+    audioLabel: 'Original audio · kitchennotes',
+    likes: 12800,
+    comments: 88,
+  },
+  {
+    id: 'r4',
+    username: 'studio.north',
+    avatar: 'https://picsum.photos/seed/r4/120/120',
+    video: 'https://www.w3schools.com/html/movie.mp4',
+    caption: 'Behind the scenes from today’s shoot.',
+    audioLabel: 'Neon Nights · DJ Sample',
+    likes: 456000,
+    comments: 9102,
+  },
+]
