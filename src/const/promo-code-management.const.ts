@@ -14,7 +14,6 @@ export const PROMO_CODE_TABLE_LABELS = {
 	plan: "Plan",
 	usageLimit: "Usage Limit",
 	expiryDate: "Expiry Date",
-	actions: "Actions",
 } as const;
 
 export const PROMO_STATUS_LABELS = {
@@ -57,11 +56,11 @@ export const PROMO_TIME_FILTER_OPTIONS = [
 	{ value: "1y", label: "Last year" },
 ] as const;
 
-export const PROMO_ROW_ACTIONS = {
-	viewAriaLabel: "View promo code",
-	moreActionsAriaLabel: "More actions",
-	menuEdit: "Edit",
-	menuDisable: "Disable",
+export const PROMO_BULK_ACTIONS = {
+	itemsSelected: (count: number) =>
+		count === 1 ? "1 item selected" : `${count} items selected`,
+	delete: "Delete",
+	exportCsv: "Export CSV",
 } as const;
 
 export const PROMO_MANAGEMENT_UI = {

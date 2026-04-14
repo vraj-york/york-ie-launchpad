@@ -57,6 +57,7 @@ function badgeVariantForType(type: string): BadgeVariant {
 		case "closed":
 		case "blocked":
 		case "promo_expired":
+		case "promo_active_alert":
 			return "destructive";
 
 		case "promo_disabled":

@@ -49,4 +49,9 @@ export type DataTableProps<T> = {
 	fixedHeight?: number | true;
 	/** Initial client-side sort (e.g. default column). */
 	initialSort?: SortState;
+	/**
+	 * Client pagination footer copy. `range` → “Showing 1 to 8 of 8 results”.
+	 * `endTotal` → “Showing 8 of 8 results” (end of current page vs total).
+	 */
+	paginationSummary?: "range" | "endTotal";
 };

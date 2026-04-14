@@ -1,16 +1,7 @@
-import { Eye, MoreVertical, Pencil } from "lucide-react";
 import { BSPBadge } from "@/components";
-import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
 	PROMO_MANAGEMENT_UI,
-	PROMO_ROW_ACTIONS,
 	PROMO_STATUS_LABELS,
 	PROMO_CODE_TABLE_LABELS,
 } from "@/const";
@@ -19,7 +10,6 @@ import type {
 	ColumnDef,
 	PromoCodeColumnSelection,
 	PromoCodeManagementRow,
-	PromoCodeRowActions,
 } from "@/types";
 import { formatDateShort } from "@/utils";
 
@@ -41,13 +31,14 @@ function planBadgeClass(label: string): string {
 }
 
 function PromoStatusBadge({ row }: { row: PromoCodeManagementRow }) {
-	const type =
-		row.status === "active"
-			? "active"
-			: row.status === "disabled"
-				? "promo_disabled"
-				: "promo_expired";
 	const label = PROMO_STATUS_LABELS[row.status];
+	if (row.status === "active") {
+		const type =
+			row.activeBadgeTone === "destructive" ? "promo_active_alert" : "active";
+		return <BSPBadge type={type}>{label}</BSPBadge>;
+	}
+	const type =
+		row.status === "disabled" ? "promo_disabled" : "promo_expired";
 	return <BSPBadge type={type}>{label}</BSPBadge>;
 }
 
@@ -71,7 +62,6 @@ function PlanBadge({ row }: { row: PromoCodeManagementRow }) {
 
 export function getPromoCodeManagementColumns(
 	selection?: PromoCodeColumnSelection,
-	actions?: PromoCodeRowActions,
 ): ColumnDef<PromoCodeManagementRow>[] {
 	const allSelected =
 		selection !== undefined &&
@@ -144,8 +134,9 @@ export function getPromoCodeManagementColumns(
 			cell: (row) => <PlanBadge row={row} />,
 		},
 		{
-			id: "usage",
+			id: "usageUsed",
 			header: PROMO_CODE_TABLE_LABELS.usageLimit,
+			accessorKey: "usageUsed",
 			sortable: true,
 			minWidth: "130px",
 			cell: (row) => `${row.usageUsed}/${row.usageLimit}`,
@@ -158,55 +149,5 @@ export function getPromoCodeManagementColumns(
 			minWidth: "140px",
 			cell: (row) => formatDateShort(row.expiryDate),
 		},
-		...(actions
-			? [
-					{
-						id: "actions",
-						header: PROMO_CODE_TABLE_LABELS.actions,
-						minWidth: "92px",
-						cell: (row: PromoCodeManagementRow) => (
-							<div className="flex gap-1">
-								<Button
-									type="button"
-									variant="ghost"
-									size="icon-sm"
-									className="text-muted-foreground hover:text-foreground"
-									aria-label={`${PROMO_ROW_ACTIONS.viewAriaLabel} ${row.code}`}
-									onClick={() => actions.onView(row)}
-								>
-									<Eye className="size-4" aria-hidden />
-								</Button>
-								<DropdownMenu>
-									<DropdownMenuTrigger asChild>
-										<Button
-											type="button"
-											variant="ghost"
-											size="icon-sm"
-											className="text-muted-foreground hover:text-foreground"
-											aria-label={`${PROMO_ROW_ACTIONS.moreActionsAriaLabel} ${row.code}`}
-										>
-											<MoreVertical className="size-4" aria-hidden />
-										</Button>
-									</DropdownMenuTrigger>
-									<DropdownMenuContent
-										align="end"
-										className="min-w-40 border-border/60 shadow-md"
-									>
-										<DropdownMenuItem onSelect={() => actions.onEdit(row)}>
-											<Pencil className="size-4" aria-hidden />
-											{PROMO_ROW_ACTIONS.menuEdit}
-										</DropdownMenuItem>
-										{row.status !== "disabled" ? (
-											<DropdownMenuItem onSelect={() => actions.onDisable(row)}>
-												{PROMO_ROW_ACTIONS.menuDisable}
-											</DropdownMenuItem>
-										) : null}
-									</DropdownMenuContent>
-								</DropdownMenu>
-							</div>
-						),
-					},
-				]
-			: []),
 	];
 }

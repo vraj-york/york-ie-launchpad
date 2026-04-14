@@ -9,6 +9,8 @@ export type PromoCodeManagementRow = {
 	id: string;
 	code: string;
 	status: PromoCodeStatus;
+	/** Active row shown with error-toned badge in design when set. */
+	activeBadgeTone?: "default" | "destructive";
 	discountPercent: number;
 	planLabel: string;
 	planKey: PromoPlanFilterKey;
@@ -25,12 +27,6 @@ export type PromoCodeColumnSelection = {
 	selectedIds: Set<string>;
 	onToggleRow: (id: string, checked: boolean) => void;
 	onToggleAll: (checked: boolean) => void;
-};
-
-export type PromoCodeRowActions = {
-	onView: (row: PromoCodeManagementRow) => void;
-	onEdit: (row: PromoCodeManagementRow) => void;
-	onDisable: (row: PromoCodeManagementRow) => void;
 };
 
 export type PromoCodeManagementFiltersGroupProps = {

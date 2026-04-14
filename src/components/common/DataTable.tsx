@@ -36,6 +36,7 @@ export function DataTable<T extends { id: string | number }>({
 	serverSort,
 	fixedHeight,
 	initialSort,
+	paginationSummary = "range",
 }: DataTableProps<T>) {
 	/** When fixedHeight is true or a number: table body scrolls; header and pagination stay fixed. */
 	const scrollAreaHeight =
@@ -310,8 +311,17 @@ export function DataTable<T extends { id: string | number }>({
 			{showPagination && hasData && (
 				<div className="flex shrink-0 items-center justify-between pt-6 pb-2">
 					<p className="text-small text-text-secondary">
-						{DATA_TABLE_TEXT.showing} {paginationStart} to {paginationEnd} of{" "}
-						{totalCount} results
+						{paginationSummary === "range" ? (
+							<>
+								{DATA_TABLE_TEXT.showing} {paginationStart} to {paginationEnd}{" "}
+								of {totalCount} results
+							</>
+						) : (
+							<>
+								{DATA_TABLE_TEXT.showing} {paginationEnd} of {totalCount}{" "}
+								results
+							</>
+						)}
 					</p>
 					<div className="flex items-center gap-2">
 						<Button
