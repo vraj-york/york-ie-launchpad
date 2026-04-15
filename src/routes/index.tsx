@@ -20,6 +20,7 @@ import {
 	InvoiceManagementPage,
 	LoginPage,
 	RolesPermissionsPage,
+	StructurePage,
 	UserDirectoryPage,
 	ViewCompanyPage,
 	ViewCorporationPage,
@@ -55,6 +56,14 @@ export const routes: RouteConfig[] = [
 		element: (
 			<ProtectedRoute>
 				<DashboardPage />
+			</ProtectedRoute>
+		),
+	},
+	{
+		path: ROUTES.structure.root,
+		element: (
+			<ProtectedRoute>
+				<StructurePage />
 			</ProtectedRoute>
 		),
 	},

@@ -1,12 +1,14 @@
 import {
 	Building2,
 	LayoutDashboard,
+	LayoutGrid,
 	MapPin,
 	Receipt,
 	Shield,
 	Users,
 } from "lucide-react";
 import type { SidebarMenuSection } from "@/types";
+import { ROUTES } from "./routes.const";
 
 export const SIDEBAR_MENU: SidebarMenuSection[] = [
 	{
@@ -16,7 +18,13 @@ export const SIDEBAR_MENU: SidebarMenuSection[] = [
 				id: "dashboard",
 				label: "Dashboard",
 				icon: LayoutDashboard,
-				path: "/dashboard",
+				path: ROUTES.dashboard.root,
+			},
+			{
+				id: "structure",
+				label: "Structure",
+				icon: LayoutGrid,
+				path: ROUTES.structure.root,
 			},
 		],
 	},

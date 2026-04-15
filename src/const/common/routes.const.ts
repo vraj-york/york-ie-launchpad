@@ -46,4 +46,7 @@ export const ROUTES: AppRoutes = {
 	userDirectory: {
 		root: "/user-directory",
 	},
+	structure: {
+		root: "/structure",
+	},
 } as const;

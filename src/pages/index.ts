@@ -6,4 +6,5 @@ export * from "./corporation-directory";
 export * from "./dashboard";
 export * from "./invoice-management";
 export * from "./roles-permissions";
+export * from "./structure";
 export * from "./user-directory";
