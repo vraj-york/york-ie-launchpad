@@ -13,6 +13,7 @@ import SuggestionReviewPage from './components/pages/SuggestionReviewPage';
 import MeetingDetailPage from './components/pages/MeetingDetailPage';
 import AIAgentsHub from './components/pages/AIAgentsHub';
 import VrajPage from './components/pages/VrajPage';
+import WireframeBoardPage from './components/pages/WireframeBoardPage';
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,7 @@ export const router = createBrowserRouter([
       { path: 'tasks', Component: TasksPage },
       { path: 'planning', Component: PlanningPage },
       { path: 'vraj', Component: VrajPage },
+      { path: 'board', Component: WireframeBoardPage },
       { path: 'notifications', Component: NotificationsPage },
       { path: 'help', Component: HelpPage },
       {
