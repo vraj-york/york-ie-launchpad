@@ -1,4 +1,5 @@
 import { MapPin, Code2, ExternalLink, MessageSquare, Layers } from 'lucide-react';
+import vrajLinkedInPhoto from '@/assets/images/vraj-gangani-linkedin-profile.png';
 
 const PROFILE_SOURCE = 'https://indiepa.ge/vrajgangani';
 
@@ -40,10 +41,7 @@ export default function VrajPage() {
             <div className="rounded-2xl border border-[#E5E7EB] bg-white shadow-[0_1px_3px_rgba(0,0,0,0.06),0_12px_40px_-12px_rgba(37,99,235,0.15)] overflow-hidden">
               <div
                 className="h-[140px] sm:h-[168px] relative bg-[#1E3A5F] bg-cover bg-center"
-                style={{
-                  backgroundImage:
-                    "url('https://d3m8mk7e1mf7xn.cloudfront.net/66bcde1972fd548fb1576592/1752578344587Profile%20LinkedIn%20Banner.png')",
-                }}
+                style={{ backgroundImage: `url(${vrajLinkedInPhoto})` }}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/85 via-[#1E40AF]/35 to-transparent" />
                 <div className="absolute inset-0 opacity-25 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.2\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]" />
@@ -52,12 +50,12 @@ export default function VrajPage() {
               <div className="px-6 sm:px-8 pb-8 -mt-14 relative">
                 <div className="flex flex-col sm:flex-row sm:items-end gap-5">
                   <div className="flex-shrink-0">
-                    <div
-                      className="w-[112px] h-[112px] rounded-2xl border-4 border-white shadow-lg flex items-center justify-center bg-gradient-to-br from-[#2563EB] to-[#6D28D9] ring-1 ring-black/[0.06]"
-                      role="img"
-                      aria-label="Vraj Gangani"
-                    >
-                      <span className="text-[36px] font-bold text-white tracking-tight select-none">VG</span>
+                    <div className="w-[112px] h-[112px] rounded-2xl border-4 border-white shadow-lg overflow-hidden bg-[#E5E7EB] ring-1 ring-black/[0.06]">
+                      <img
+                        src={vrajLinkedInPhoto}
+                        alt="Vraj Gangani"
+                        className="w-full h-full object-cover object-[center_22%]"
+                      />
                     </div>
                   </div>
                   <div className="flex-1 min-w-0 pb-1">
@@ -136,7 +134,7 @@ export default function VrajPage() {
                 </div>
 
                 <p className="text-[11px] text-[#9CA3AF] mt-10 leading-relaxed">
-                  Public profile details summarized from{' '}
+                  Photo is the LinkedIn profile graphic published on{' '}
                   <a
                     href={PROFILE_SOURCE}
                     target="_blank"
@@ -145,7 +143,7 @@ export default function VrajPage() {
                   >
                     Indie Page
                   </a>
-                  .
+                  . Other details summarized there.
                 </p>
               </div>
             </div>
