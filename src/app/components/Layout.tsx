@@ -1,7 +1,7 @@
 import { Outlet, NavLink, useLocation } from 'react-router';
 import {
   Users, FileText, FolderOpen, CheckSquare, Calendar,
-  Bell, HelpCircle, Zap, ChevronDown, Settings, Mic, Bot
+  Bell, HelpCircle, Zap, ChevronDown, Settings, Mic, Bot, Sparkles,
 } from 'lucide-react';
 
 const navItems = [
@@ -10,6 +10,7 @@ const navItems = [
   { label: 'Projects', icon: FolderOpen, path: '/projects' },
   { label: 'Tasks', icon: CheckSquare, path: '/tasks' },
   { label: 'Planning', icon: Calendar, path: '/planning' },
+  { label: 'Vraj', icon: Sparkles, path: '/vraj' },
   { label: 'AI Notetaker', icon: Mic, path: '/ai-notetaker', badge: 'NEW' },
   { label: 'AI Agents', icon: Bot, path: '/ai-agents', badge: 'NEW', indigo: true },
 ];
