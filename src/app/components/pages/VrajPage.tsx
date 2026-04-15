@@ -1,7 +1,9 @@
 import { MapPin, Code2, ExternalLink, MessageSquare, Layers } from 'lucide-react';
-import vrajLinkedInPhoto from '@/assets/images/vraj-gangani-linkedin-profile.png';
+import vrajLinkedInBanner from '@/assets/images/vraj-linkedin-banner.png';
+import vrajProfilePhoto from '@/assets/images/vraj-profile-photo.png';
 
 const PROFILE_SOURCE = 'https://indiepa.ge/vrajgangani';
+const CALENDLY_PROFILE = 'https://calendly.com/vrajgangani';
 
 const PROJECTS = [
   {
@@ -41,7 +43,7 @@ export default function VrajPage() {
             <div className="rounded-2xl border border-[#E5E7EB] bg-white shadow-[0_1px_3px_rgba(0,0,0,0.06),0_12px_40px_-12px_rgba(37,99,235,0.15)] overflow-hidden">
               <div
                 className="h-[140px] sm:h-[168px] relative bg-[#1E3A5F] bg-cover bg-center"
-                style={{ backgroundImage: `url(${vrajLinkedInPhoto})` }}
+                style={{ backgroundImage: `url(${vrajLinkedInBanner})` }}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/85 via-[#1E40AF]/35 to-transparent" />
                 <div className="absolute inset-0 opacity-25 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.2\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]" />
@@ -50,11 +52,11 @@ export default function VrajPage() {
               <div className="px-6 sm:px-8 pb-8 -mt-14 relative">
                 <div className="flex flex-col sm:flex-row sm:items-end gap-5">
                   <div className="flex-shrink-0">
-                    <div className="w-[112px] h-[112px] rounded-2xl border-4 border-white shadow-lg overflow-hidden bg-[#E5E7EB] ring-1 ring-black/[0.06]">
+                    <div className="w-[112px] h-[112px] rounded-full border-4 border-white shadow-lg overflow-hidden bg-[#E5E7EB] ring-1 ring-black/[0.06]">
                       <img
-                        src={vrajLinkedInPhoto}
+                        src={vrajProfilePhoto}
                         alt="Vraj Gangani"
-                        className="w-full h-full object-cover object-[center_22%]"
+                        className="w-full h-full object-cover object-[center_40%]"
                       />
                     </div>
                   </div>
@@ -134,7 +136,7 @@ export default function VrajPage() {
                 </div>
 
                 <p className="text-[11px] text-[#9CA3AF] mt-10 leading-relaxed">
-                  Photo is the LinkedIn profile graphic published on{' '}
+                  Header image is the LinkedIn banner graphic from{' '}
                   <a
                     href={PROFILE_SOURCE}
                     target="_blank"
@@ -143,7 +145,16 @@ export default function VrajPage() {
                   >
                     Indie Page
                   </a>
-                  . Other details summarized there.
+                  . Profile photo from the public{' '}
+                  <a
+                    href={CALENDLY_PROFILE}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#6B7280] hover:text-[#2563EB] underline underline-offset-2"
+                  >
+                    Calendly
+                  </a>{' '}
+                  page (same username). Other details summarized on Indie Page.
                 </p>
               </div>
             </div>
