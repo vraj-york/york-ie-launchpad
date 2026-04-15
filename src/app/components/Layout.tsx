@@ -6,7 +6,7 @@ import {
 
 const navItems = [
   { label: 'Clients', icon: Users, path: '/clients' },
-  { label: 'Templates', icon: FileText, path: '/templates' },
+  { label: 'my Templates', icon: FileText, path: '/templates' },
   { label: 'Projects', icon: FolderOpen, path: '/projects' },
   { label: 'Tasks', icon: CheckSquare, path: '/tasks' },
   { label: 'Planning', icon: Calendar, path: '/planning' },
