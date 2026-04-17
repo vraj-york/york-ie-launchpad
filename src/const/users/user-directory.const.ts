@@ -144,3 +144,28 @@ export const SEND_INVITE_DIALOG_CONTENT = {
 	sendInviteButton: "Send Invite",
 	cancelButton: "Cancel",
 } as const;
+
+export const INVITE_USER_FLOW_CONTENT = {
+	dialogTitle: "Invite user",
+	dialogDescription:
+		"Enter the user’s details. We’ll email them a link to join your workspace.",
+	emailLabel: "Work email",
+	emailPlaceholder: "name@company.com",
+	firstNameLabel: "First name",
+	lastNameLabel: "Last name",
+	companyLabel: "Company",
+	companyPlaceholder: "Select company",
+	roleCategoryLabel: "Role category",
+	roleCategoryPlaceholder: "Select category",
+	workPhoneLabel: "Work phone (optional)",
+	workPhonePlaceholder: "+1 …",
+	cancelButton: "Cancel",
+	sendInviteButton: "Send invitation",
+	sendingButton: "Sending…",
+	validationEmail: "Enter a valid email address.",
+	validationCompany: "Select a company.",
+	validationCategory: "Select a role category.",
+	validationName: "First and last name are required.",
+	successToast: "Invitation sent.",
+	errorToast: "Could not send invitation. Try again.",
+} as const;

@@ -13,6 +13,7 @@ import {
 	TableSkeleton,
 	WhiteBox,
 } from "@/components";
+import { InviteUserDialog } from "./InviteUserDialog";
 import { Button } from "@/components/ui/button";
 import {
 	InputGroup,
@@ -60,6 +61,7 @@ export function UserDirectoryContent() {
 	const [sendInviteOpen, setSendInviteOpen] = useState(false);
 	const [_sendInviteContact, setSendInviteContact] =
 		useState<ContactDirectoryItem | null>(null);
+	const [inviteUserOpen, setInviteUserOpen] = useState(false);
 	const [roleCategories, setRoleCategories] = useState<RoleCategoryOption[]>(
 		[],
 	);
@@ -555,6 +557,36 @@ export function UserDirectoryContent() {
 		setSendInviteOpen(false);
 	}, []);
 
+	const refreshUsersList = useCallback(() => {
+		lastFetched.current = null;
+		void fetchUsers(listPage, PAGE_SIZE, {
+			search: searchForUsersApi || undefined,
+			sortBy: listSortBy,
+			sortOrder: listSortOrder,
+			status: listStatusFilter,
+			categoryId: listCategoryIdFilter,
+			corporationIds:
+				moreFilters.corporationIds.length > 0
+					? moreFilters.corporationIds
+					: undefined,
+			companyIds:
+				moreFilters.companyIds.length > 0 ? moreFilters.companyIds : undefined,
+			timezones:
+				moreFilters.timeZones.length > 0 ? moreFilters.timeZones : undefined,
+		});
+	}, [
+		fetchUsers,
+		listPage,
+		listSortBy,
+		listSortOrder,
+		listStatusFilter,
+		listCategoryIdFilter,
+		moreFilters.corporationIds,
+		moreFilters.companyIds,
+		moreFilters.timeZones,
+		searchForUsersApi,
+	]);
+
 	return (
 		<>
 			<div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -592,7 +624,11 @@ export function UserDirectoryContent() {
 							{CONTACT_DIRECTORY_PAGE_CONTENT.addContactButton}
 						</Button>
 					) : (
-						<Button className="h-9 gap-2">
+						<Button
+							type="button"
+							className="h-9 gap-2"
+							onClick={() => setInviteUserOpen(true)}
+						>
 							<Send className="size-3.5" />
 							{USER_DIRECTORY_PAGE_CONTENT.inviteUserButton}
 						</Button>
@@ -825,6 +861,15 @@ export function UserDirectoryContent() {
 				corporationOptions={corporationOptionsForMoreFilters}
 				companyOptions={companiesForMoreFilters}
 				optionsLoading={userFiltersBusy}
+			/>
+
+			<InviteUserDialog
+				open={inviteUserOpen}
+				onOpenChange={setInviteUserOpen}
+				companyOptions={companiesForMoreFilters}
+				roleCategories={roleCategories}
+				optionsLoading={userFiltersBusy}
+				onInviteSent={refreshUsersList}
 			/>
 
 			<ConfirmationModal
