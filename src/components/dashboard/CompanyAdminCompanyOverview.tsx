@@ -59,7 +59,7 @@ export function CompanyAdminCompanyOverview({
 
 				<Card className="border bg-background rounded-xl border-border shadow-md">
 					<CardHeader className="space-y-1 text-center">
-						<CardTitle className="text-heading-4 font-semibold text-text-foreground">
+						<CardTitle className="text-heading-4 font-semibold text-red-600">
 							{C.overviewCardTitle}
 						</CardTitle>
 						<CardDescription className="text-small font-normal text-text-secondary">
