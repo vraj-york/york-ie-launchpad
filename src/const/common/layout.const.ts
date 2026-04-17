@@ -1,5 +1,6 @@
 import {
 	Building2,
+	FlaskConical,
 	LayoutDashboard,
 	MapPin,
 	Receipt,
@@ -7,6 +8,7 @@ import {
 	Users,
 } from "lucide-react";
 import type { SidebarMenuSection } from "@/types";
+import { ROUTES } from "./routes.const";
 
 export const SIDEBAR_MENU: SidebarMenuSection[] = [
 	{
@@ -16,7 +18,13 @@ export const SIDEBAR_MENU: SidebarMenuSection[] = [
 				id: "dashboard",
 				label: "Dashboard",
 				icon: LayoutDashboard,
-				path: "/dashboard",
+				path: ROUTES.dashboard.root,
+			},
+			{
+				id: "test-ui",
+				label: "Test UI",
+				icon: FlaskConical,
+				path: ROUTES.testUi.root,
 			},
 		],
 	},

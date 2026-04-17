@@ -20,6 +20,7 @@ import {
 	InvoiceManagementPage,
 	LoginPage,
 	RolesPermissionsPage,
+	TestUiPage,
 	UserDirectoryPage,
 	ViewCompanyPage,
 	ViewCorporationPage,
@@ -55,6 +56,14 @@ export const routes: RouteConfig[] = [
 		element: (
 			<ProtectedRoute>
 				<DashboardPage />
+			</ProtectedRoute>
+		),
+	},
+	{
+		path: ROUTES.testUi.root,
+		element: (
+			<ProtectedRoute>
+				<TestUiPage />
 			</ProtectedRoute>
 		),
 	},
