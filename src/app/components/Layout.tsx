@@ -107,7 +107,7 @@ function NavRow({
     <div
       className={`flex items-center gap-2.5 rounded-md px-3 py-2 text-[13px] transition-colors ${
         active
-          ? 'bg-[#2563EB] font-medium text-white'
+          ? 'bg-primary font-medium text-primary-foreground'
           : 'font-normal text-sidebar-foreground hover:bg-sidebar-accent'
       }`}
     >
@@ -129,8 +129,8 @@ export default function Layout() {
       <aside className="flex h-full w-[260px] shrink-0 flex-col border-r border-sidebar-border bg-sidebar">
         <div className="flex h-[52px] shrink-0 items-center justify-between border-b border-sidebar-border px-3">
           <div className="flex min-w-0 items-center gap-2">
-            <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-[#2563EB]">
-              <Hexagon className="size-4 text-white" strokeWidth={2} />
+            <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+              <Hexagon className="size-4" strokeWidth={2} />
             </div>
             <span className="truncate text-[13px] font-semibold leading-tight text-foreground">
               BSPBlueprint
@@ -167,7 +167,10 @@ export default function Layout() {
                         end={item.path !== '/projects'}
                       >
                         <NavRow active={isActive}>
-                          <Icon size={15} className={isActive ? 'text-white' : 'text-muted-foreground'} />
+                          <Icon
+                            size={15}
+                            className={isActive ? 'text-primary-foreground' : 'text-muted-foreground'}
+                          />
                           <span className="flex-1 truncate">{item.label}</span>
                         </NavRow>
                       </NavLink>
@@ -196,7 +199,7 @@ export default function Layout() {
             type="button"
             className="flex w-full items-center gap-2.5 rounded-md px-2 py-1.5 transition-colors hover:bg-sidebar-accent"
           >
-            <Avatar initials="SK" color="#3B82F6" size="md" />
+            <Avatar initials="SK" color="var(--chart-3)" size="md" />
             <div className="min-w-0 flex-1 text-left">
               <div className="truncate text-[12px] font-medium text-foreground">
                 Sarah Kim

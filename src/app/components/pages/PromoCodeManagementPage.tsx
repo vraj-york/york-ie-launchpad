@@ -3,12 +3,14 @@ import {
   ArrowUpDown,
   Bell,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   ChevronUp,
-  Eye,
+  Download,
   Moon,
-  MoreVertical,
   Plus,
   Search,
+  Trash2,
 } from 'lucide-react';
 import { PROMO_CODE_ROWS, type PromoCodeRow } from '../../data/promoCodesData';
 import { Avatar, AvatarFallback } from '../ui/avatar';
@@ -16,12 +18,6 @@ import { Badge } from '../ui/badge';
 import { Button } from '../ui/button';
 import { Card, CardContent } from '../ui/card';
 import { Checkbox } from '../ui/checkbox';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '../ui/dropdown-menu';
 import { Input } from '../ui/input';
 import {
   Select,
@@ -45,15 +41,15 @@ const STATUS_BADGE: Record<
 > = {
   Active: {
     className:
-      'border-transparent bg-[#F0FDF4] text-[#15803D] hover:bg-[#F0FDF4]',
+      'border-transparent bg-chart-5/15 text-chart-5 hover:bg-chart-5/15',
   },
   Disabled: {
     className:
-      'border-transparent bg-[#F3E8FF] text-[#6B21A8] hover:bg-[#F3E8FF]',
+      'border-transparent bg-chart-4/15 text-chart-4 hover:bg-chart-4/15',
   },
   Expired: {
     className:
-      'border-transparent bg-[#FEF2F2] text-[#B91C1C] hover:bg-[#FEF2F2]',
+      'border-transparent bg-destructive/10 text-destructive hover:bg-destructive/10',
   },
 };
 
@@ -62,13 +58,13 @@ const PLAN_BADGE: Record<
   { className: string }
 > = {
   'BSPBlueprint (Monthly)': {
-    className: 'bg-[#EFF6FF] text-[#1D4ED8] border-0',
+    className: 'border-0 bg-chart-3/15 text-chart-3',
   },
   'BSP Assessment (Individual)': {
-    className: 'bg-[#FFFBEB] text-[#B45309] border-0',
+    className: 'border-0 bg-chart-1/15 text-chart-1',
   },
   'BSP Assessment (Annual)': {
-    className: 'bg-[#ECFDF5] text-[#047857] border-0',
+    className: 'border-0 bg-chart-2/15 text-chart-2',
   },
 };
 
@@ -81,11 +77,19 @@ const sortableColumns = [
   { key: 'expiry', label: 'Expiry Date' },
 ] as const;
 
+function initialSelection(): Record<string, boolean> {
+  const next: Record<string, boolean> = {};
+  PROMO_CODE_ROWS.slice(0, 4).forEach((r) => {
+    next[r.id] = true;
+  });
+  return next;
+}
+
 export default function PromoCodeManagementPage() {
   const [rows] = useState(PROMO_CODE_ROWS);
   const [sortCol, setSortCol] = useState<string | null>(null);
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('asc');
-  const [selected, setSelected] = useState<Record<string, boolean>>({});
+  const [selected, setSelected] = useState<Record<string, boolean>>(initialSelection);
 
   const sortedRows = useMemo(() => {
     if (!sortCol) return rows;
@@ -119,6 +123,8 @@ export default function PromoCodeManagementPage() {
     return copy;
   }, [rows, sortCol, sortDir]);
 
+  const selectedCount = sortedRows.filter((r) => selected[r.id]).length;
+
   const allSelected =
     sortedRows.length > 0 && sortedRows.every((r) => selected[r.id]);
   const someSelected = sortedRows.some((r) => selected[r.id]) && !allSelected;
@@ -149,8 +155,7 @@ export default function PromoCodeManagementPage() {
 
   return (
     <div className="flex h-full flex-col overflow-hidden bg-muted/60">
-      {/* Top app bar */}
-      <div className="flex h-[52px] flex-shrink-0 items-center gap-3 border-b border-border bg-card px-6">
+      <div className="flex h-[52px] shrink-0 items-center gap-3 border-b border-border bg-card px-6">
         <h1 className="text-[15px] font-semibold text-foreground">
           Promo Code Management
         </h1>
@@ -164,7 +169,7 @@ export default function PromoCodeManagementPage() {
             <span className="sr-only">Notifications</span>
           </Button>
           <Avatar className="size-8">
-            <AvatarFallback className="bg-[#2563EB] text-xs font-medium text-white">
+            <AvatarFallback className="bg-primary text-xs font-medium text-primary-foreground">
               AD
             </AvatarFallback>
           </Avatar>
@@ -182,10 +187,7 @@ export default function PromoCodeManagementPage() {
                 Create, track, and manage promo codes across overall system.
               </p>
             </div>
-            <Button
-              type="button"
-              className="h-9 gap-1.5 rounded-md bg-[#2563EB] px-4 text-[13px] font-medium text-white hover:bg-[#1D4ED8]"
-            >
+            <Button type="button" className="h-9 gap-1.5 text-[13px]">
               <Plus className="size-4" />
               Add New Promo Code
             </Button>
@@ -194,7 +196,7 @@ export default function PromoCodeManagementPage() {
           <Card className="gap-0 overflow-hidden rounded-xl border border-border py-0 shadow-sm">
             <CardContent className="space-y-0 p-0">
               <div className="flex flex-wrap items-center gap-3 border-b border-border bg-card px-5 py-4">
-                <div className="relative min-w-[200px] flex-1 max-w-md">
+                <div className="relative max-w-md min-w-[200px] flex-1">
                   <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
                   <Input
                     placeholder="Search here..."
@@ -237,6 +239,34 @@ export default function PromoCodeManagementPage() {
                 </div>
               </div>
 
+              {selectedCount > 0 && (
+                <div className="flex flex-wrap items-center gap-3 border-b border-border bg-muted/40 px-5 py-3">
+                  <p className="text-[13px] font-medium text-foreground">
+                    {selectedCount} items selected
+                  </p>
+                  <div className="ml-auto flex flex-wrap items-center gap-2">
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      className="h-8 gap-1.5 text-[13px] text-destructive hover:bg-destructive/10 hover:text-destructive"
+                    >
+                      <Trash2 className="size-4" />
+                      Delete
+                    </Button>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      className="h-8 gap-1.5 text-[13px] text-muted-foreground"
+                    >
+                      <Download className="size-4" />
+                      Export CSV
+                    </Button>
+                  </div>
+                </div>
+              )}
+
               <Table className="text-[13px]">
                 <TableHeader>
                   <TableRow className="border-b border-border bg-muted/50 hover:bg-muted/50">
@@ -259,9 +289,6 @@ export default function PromoCodeManagementPage() {
                         </span>
                       </TableHead>
                     ))}
-                    <TableHead className="w-[100px] pr-5 text-right text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-                      Actions
-                    </TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -309,39 +336,6 @@ export default function PromoCodeManagementPage() {
                       <TableCell className="text-muted-foreground">
                         {row.expiry}
                       </TableCell>
-                      <TableCell className="pr-5 text-right">
-                        <div className="flex items-center justify-end gap-1">
-                          <Button
-                            type="button"
-                            variant="ghost"
-                            size="icon"
-                            className="size-8 text-muted-foreground"
-                          >
-                            <Eye className="size-4" />
-                            <span className="sr-only">View</span>
-                          </Button>
-                          <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                              <Button
-                                type="button"
-                                variant="ghost"
-                                size="icon"
-                                className="size-8 text-muted-foreground"
-                              >
-                                <MoreVertical className="size-4" />
-                                <span className="sr-only">More</span>
-                              </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end">
-                              <DropdownMenuItem>Edit</DropdownMenuItem>
-                              <DropdownMenuItem>Duplicate</DropdownMenuItem>
-                              <DropdownMenuItem variant="destructive">
-                                Delete
-                              </DropdownMenuItem>
-                            </DropdownMenuContent>
-                          </DropdownMenu>
-                        </div>
-                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -359,7 +353,7 @@ export default function PromoCodeManagementPage() {
                     className="h-8 gap-1 text-[12px] text-muted-foreground"
                     disabled
                   >
-                    <span className="text-xs">&lt;</span>
+                    <ChevronLeft className="size-4" />
                     Previous
                   </Button>
                   <Button
@@ -378,7 +372,7 @@ export default function PromoCodeManagementPage() {
                     disabled
                   >
                     Next
-                    <span className="text-xs">&gt;</span>
+                    <ChevronRight className="size-4" />
                   </Button>
                 </div>
               </div>
