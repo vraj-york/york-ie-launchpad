@@ -31,7 +31,7 @@ export function CompanyBasicDetailsReview({
 				<h3 className="text-sm font-semibold text-text-foreground">
 					{C.corporationSection}
 				</h3>
-				<div className="rounded-lg border border-border bg-background px-4 py-5 sm:px-6">
+				<div className="rounded-lg border border-border bg-gradient-to-br from-muted/60 via-background to-muted/40 px-4 py-5 sm:px-6 dark:from-muted/35 dark:via-background dark:to-muted/25">
 					<div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
 						<ReviewField
 							label={C.labels.parentCorporationLegalName}
