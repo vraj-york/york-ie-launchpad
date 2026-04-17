@@ -12,6 +12,7 @@ import AINotetakerSettings from './components/pages/AINotetakerSettings';
 import SuggestionReviewPage from './components/pages/SuggestionReviewPage';
 import MeetingDetailPage from './components/pages/MeetingDetailPage';
 import AIAgentsHub from './components/pages/AIAgentsHub';
+import PromoCodeManagementPage from './components/pages/PromoCodeManagementPage';
 
 export const router = createBrowserRouter([
   {
@@ -41,6 +42,7 @@ export const router = createBrowserRouter([
           { index: true, Component: AIAgentsHub },
         ],
       },
+      { path: 'promo-codes', Component: PromoCodeManagementPage },
     ],
   },
 ]);
