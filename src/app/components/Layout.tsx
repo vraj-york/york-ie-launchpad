@@ -1,8 +1,9 @@
 import { Outlet, NavLink, useLocation } from 'react-router';
 import {
   Users, FileText, FolderOpen, CheckSquare, Calendar,
-  Bell, HelpCircle, Zap, ChevronDown, Settings, Mic, Bot
+  Bell, HelpCircle, ChevronDown, Settings, Mic, Bot
 } from 'lucide-react';
+import jetpackSidebarLogo from '@/assets/images/jetpack-sidebar-logo.svg';
 
 const navItems = [
   { label: 'Clients', icon: Users, path: '/clients' },
@@ -40,9 +41,14 @@ export default function Layout() {
         {/* Logo */}
         <div className="h-[52px] flex items-center px-4 border-b border-[#E5E7EB] flex-shrink-0">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-md bg-[#2563EB] flex items-center justify-center flex-shrink-0">
-              <Zap size={14} className="text-white" fill="white" />
-            </div>
+            <img
+              src={jetpackSidebarLogo}
+              alt=""
+              width={28}
+              height={28}
+              className="w-7 h-7 flex-shrink-0"
+              decoding="async"
+            />
             <span className="text-[13px] font-semibold text-[#111827] leading-tight">
               Jetpack Workflow
             </span>
